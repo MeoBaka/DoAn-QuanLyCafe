@@ -50,19 +50,26 @@
     <Reference Include="Costura, Version=3.3.3.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.3.3.3\lib\net40\Costura.dll</HintPath>
     </Reference>
+    <Reference Include="GumroadLicensing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GumroadLicensing.1.0.3\lib\net40\GumroadLicensing.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.Charts.WinForms, Version=1.0.9.0, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.Charts.WinForms.1.0.9\lib\net40\Guna.Charts.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.5, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.5\lib\net40\Guna.UI2.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="NavigationMenu, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Kimtoo.NavigationMenu.1.0.2\lib\net40\NavigationMenu.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp, Version=100.0.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharpSigned.105.2.3\lib\net4\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
@@ -78,17 +85,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\User.cs" />
     <Compile Include="Controls\RJTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\RJTextBox.Designer.cs">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAL\Provider.cs" />
     <Compile Include="GUI\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -107,6 +125,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -118,8 +137,300 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="AppData\" />
+    <Content Include="AppData\Icons\3d bar chart.ico" />
+    <Content Include="AppData\Icons\abort.ico" />
+    <Content Include="AppData\Icons\about.ico" />
+    <Content Include="AppData\Icons\accounting.ico" />
+    <Content Include="AppData\Icons\add.ico" />
+    <Content Include="AppData\Icons\add.png" />
+    <Content Include="AppData\Icons\address book.ico" />
+    <Content Include="AppData\Icons\alarm clock.ico" />
+    <Content Include="AppData\Icons\alarm.ico" />
+    <Content Include="AppData\Icons\alert.ico" />
+    <Content Include="AppData\Icons\alien.ico" />
+    <Content Include="AppData\Icons\align-right_10758492.png" />
+    <Content Include="AppData\Icons\align_8983134.png" />
+    <Content Include="AppData\Icons\Align_Justify.png" />
+    <Content Include="AppData\Icons\anchor.ico" />
+    <Content Include="AppData\Icons\application.ico" />
+    <Content Include="AppData\Icons\apply.ico" />
+    <Content Include="AppData\Icons\b.png" />
+    <Content Include="AppData\Icons\back.ico" />
+    <Content Include="AppData\Icons\bad mark.ico" />
+    <Content Include="AppData\Icons\bee.ico" />
+    <Content Include="AppData\Icons\black bookmark.ico" />
+    <Content Include="AppData\Icons\black pin.ico" />
+    <Content Include="AppData\Icons\black tag.ico" />
+    <Content Include="AppData\Icons\blog.ico" />
+    <Content Include="AppData\Icons\blue bookmark.ico" />
+    <Content Include="AppData\Icons\blue key.ico" />
+    <Content Include="AppData\Icons\blue pin.ico" />
+    <Content Include="AppData\Icons\blue tag.ico" />
+    <Content Include="AppData\Icons\bomb.ico" />
+    <Content Include="AppData\Icons\bookmark.ico" />
+    <Content Include="AppData\Icons\boss.ico" />
+    <Content Include="AppData\Icons\bottom.ico" />
+    <Content Include="AppData\Icons\briefcase.ico" />
+    <Content Include="AppData\Icons\brush.ico" />
+    <Content Include="AppData\Icons\bubble.ico" />
+    <Content Include="AppData\Icons\buy.ico" />
+    <Content Include="AppData\Icons\c.png" />
+    <Content Include="AppData\Icons\calculator.ico" />
+    <Content Include="AppData\Icons\calendar.ico" />
+    <Content Include="AppData\Icons\car key.ico" />
+    <Content Include="AppData\Icons\CD.ico" />
+    <Content Include="AppData\Icons\center-alignment_7772260.png" />
+    <Content Include="AppData\Icons\Center.gif" />
+    <Content Include="AppData\Icons\center.png" />
+    <Content Include="AppData\Icons\clipboard.ico" />
+    <Content Include="AppData\Icons\clock.ico" />
+    <Content Include="AppData\Icons\close.ico" />
+    <Content Include="AppData\Icons\coin.ico" />
+    <Content Include="AppData\Icons\comment.ico" />
+    <Content Include="AppData\Icons\company.ico" />
+    <Content Include="AppData\Icons\compass.ico" />
+    <Content Include="AppData\Icons\component.ico" />
+    <Content Include="AppData\Icons\computer.ico" />
+    <Content Include="AppData\Icons\copy.ico" />
+    <Content Include="AppData\Icons\copy.png" />
+    <Content Include="AppData\Icons\create.ico" />
+    <Content Include="AppData\Icons\cut.ico" />
+    <Content Include="AppData\Icons\cut.png" />
+    <Content Include="AppData\Icons\danger.ico" />
+    <Content Include="AppData\Icons\database.ico" />
+    <Content Include="AppData\Icons\delete.ico" />
+    <Content Include="AppData\Icons\delete.png" />
+    <Content Include="AppData\Icons\delivery.ico" />
+    <Content Include="AppData\Icons\diagram.ico" />
+    <Content Include="AppData\Icons\dial.ico" />
+    <Content Include="AppData\Icons\disaster.ico" />
+    <Content Include="AppData\Icons\display.ico" />
+    <Content Include="AppData\Icons\dollar.ico" />
+    <Content Include="AppData\Icons\door.ico" />
+    <Content Include="AppData\Icons\down.ico" />
+    <Content Include="AppData\Icons\download.ico" />
+    <Content Include="AppData\Icons\downloads folder.ico" />
+    <Content Include="AppData\Icons\e-mail.ico" />
+    <Content Include="AppData\Icons\earth.ico" />
+    <Content Include="AppData\Icons\eject.ico" />
+    <Content Include="AppData\Icons\equipment.ico" />
+    <Content Include="AppData\Icons\erase.ico" />
+    <Content Include="AppData\Icons\error.ico" />
+    <Content Include="AppData\Icons\euro.ico" />
+    <Content Include="AppData\Icons\exit.ico" />
+    <Content Include="AppData\Icons\expand.ico" />
+    <Content Include="AppData\Icons\eye.ico" />
+    <Content Include="AppData\Icons\fall.ico" />
+    <Content Include="AppData\Icons\fast-forward.ico" />
+    <Content Include="AppData\Icons\favourites.ico" />
+    <Content Include="AppData\Icons\female symbol.ico" />
+    <Content Include="AppData\Icons\female.ico" />
+    <Content Include="AppData\Icons\film.ico" />
+    <Content Include="AppData\Icons\filter.ico" />
+    <Content Include="AppData\Icons\find.ico" />
+    <Content Include="AppData\Icons\first record.ico" />
+    <Content Include="AppData\Icons\first.ico" />
+    <Content Include="AppData\Icons\flag.ico" />
+    <Content Include="AppData\Icons\flash drive.ico" />
+    <Content Include="AppData\Icons\folder.ico" />
+    <Content Include="AppData\Icons\forbidden.ico" />
+    <Content Include="AppData\Icons\forward.ico" />
+    <Content Include="AppData\Icons\free bsd.ico" />
+    <Content Include="AppData\Icons\gift.ico" />
+    <Content Include="AppData\Icons\globe.ico" />
+    <Content Include="AppData\Icons\go back.ico" />
+    <Content Include="AppData\Icons\go forward.ico" />
+    <Content Include="AppData\Icons\go.ico" />
+    <Content Include="AppData\Icons\good mark.ico" />
+    <Content Include="AppData\Icons\green bookmark.ico" />
+    <Content Include="AppData\Icons\green pin.ico" />
+    <Content Include="AppData\Icons\green tag.ico" />
+    <Content Include="AppData\Icons\hard disk.ico" />
+    <Content Include="AppData\Icons\heart.ico" />
+    <Content Include="AppData\Icons\help book 3d.ico" />
+    <Content Include="AppData\Icons\help book.ico" />
+    <Content Include="AppData\Icons\help.ico" />
+    <Content Include="AppData\Icons\help1.ico" />
+    <Content Include="AppData\Icons\hint.ico" />
+    <Content Include="AppData\Icons\history.ico" />
+    <Content Include="AppData\Icons\home.ico" />
+    <Content Include="AppData\Icons\hourglass.ico" />
+    <Content Include="AppData\Icons\how-to.ico" />
+    <Content Include="AppData\Icons\hungup.ico" />
+    <Content Include="AppData\Icons\i.png" />
+    <Content Include="AppData\Icons\In-yang.ico" />
+    <Content Include="AppData\Icons\info.ico" />
+    <Content Include="AppData\Icons\Iphone.ico" />
+    <Content Include="AppData\Icons\Justify.gif" />
+    <Content Include="AppData\Icons\key.ico" />
+    <Content Include="AppData\Icons\last recor.ico" />
+    <Content Include="AppData\Icons\last.ico" />
+    <Content Include="AppData\Icons\left-right.ico" />
+    <Content Include="AppData\Icons\Left.gif" />
+    <Content Include="AppData\Icons\left.png" />
+    <Content Include="AppData\Icons\letter.ico" />
+    <Content Include="AppData\Icons\lightning.ico" />
+    <Content Include="AppData\Icons\liner.ico" />
+    <Content Include="AppData\Icons\linux.ico" />
+    <Content Include="AppData\Icons\list.ico" />
+    <Content Include="AppData\Icons\load.ico" />
+    <Content Include="AppData\Icons\lock.ico" />
+    <Content Include="AppData\Icons\low rating.ico" />
+    <Content Include="AppData\Icons\magic wand.ico" />
+    <Content Include="AppData\Icons\mail.ico" />
+    <Content Include="AppData\Icons\male symbol.ico" />
+    <Content Include="AppData\Icons\male.ico" />
+    <Content Include="AppData\Icons\medium rating.ico" />
+    <Content Include="AppData\Icons\message.ico" />
+    <Content Include="AppData\Icons\mobile-phone.ico" />
+    <Content Include="AppData\Icons\modify.ico" />
+    <Content Include="AppData\Icons\move.ico" />
+    <Content Include="AppData\Icons\movie.ico" />
+    <Content Include="AppData\Icons\music.ico" />
+    <Content Include="AppData\Icons\mute.ico" />
+    <Content Include="AppData\Icons\network connection.ico" />
+    <Content Include="AppData\Icons\new document.ico" />
+    <Content Include="AppData\Icons\new.ico" />
+    <Content Include="AppData\Icons\next track.ico" />
+    <Content Include="AppData\Icons\next.ico" />
+    <Content Include="AppData\Icons\no-entry.ico" />
+    <Content Include="AppData\Icons\no.ico" />
+    <Content Include="AppData\Icons\notes.ico" />
+    <Content Include="AppData\Icons\OK.ico" />
+    <Content Include="AppData\Icons\Open.ico" />
+    <Content Include="AppData\Icons\open.png" />
+    <Content Include="AppData\Icons\paste.ico" />
+    <Content Include="AppData\Icons\paste.png" />
+    <Content Include="AppData\Icons\pause.ico" />
+    <Content Include="AppData\Icons\people.ico" />
+    <Content Include="AppData\Icons\percent.ico" />
+    <Content Include="AppData\Icons\person.ico" />
+    <Content Include="AppData\Icons\phone number.ico" />
+    <Content Include="AppData\Icons\phone.ico" />
+    <Content Include="AppData\Icons\picture.ico" />
+    <Content Include="AppData\Icons\pie chart.ico" />
+    <Content Include="AppData\Icons\pinion.ico" />
+    <Content Include="AppData\Icons\play-music.ico" />
+    <Content Include="AppData\Icons\play.ico" />
+    <Content Include="AppData\Icons\playback.ico" />
+    <Content Include="AppData\Icons\previous record.ico" />
+    <Content Include="AppData\Icons\previous.ico" />
+    <Content Include="AppData\Icons\print.ico" />
+    <Content Include="AppData\Icons\problem.ico" />
+    <Content Include="AppData\Icons\question.ico" />
+    <Content Include="AppData\Icons\radiation.ico" />
+    <Content Include="AppData\Icons\raise.ico" />
+    <Content Include="AppData\Icons\record.ico" />
+    <Content Include="AppData\Icons\red bookmark.ico" />
+    <Content Include="AppData\Icons\red mark.ico" />
+    <Content Include="AppData\Icons\red pin.ico" />
+    <Content Include="AppData\Icons\red star.ico" />
+    <Content Include="AppData\Icons\red tag.ico" />
+    <Content Include="AppData\Icons\redo.ico" />
+    <Content Include="AppData\Icons\refresh.ico" />
+    <Content Include="AppData\Icons\remove.ico" />
+    <Content Include="AppData\Icons\repair.ico" />
+    <Content Include="AppData\Icons\report.ico" />
+    <Content Include="AppData\Icons\retort.ico" />
+    <Content Include="AppData\Icons\rewind.ico" />
+    <Content Include="AppData\Icons\rf.png" />
+    <Content Include="AppData\Icons\right-align_8774649.png" />
+    <Content Include="AppData\Icons\Right.gif" />
+    <Content Include="AppData\Icons\right.png" />
+    <Content Include="AppData\Icons\sa.png" />
+    <Content Include="AppData\Icons\sad.ico" />
+    <Content Include="AppData\Icons\saf-removebg-preview.png" />
+    <Content Include="AppData\Icons\saf.png" />
+    <Content Include="AppData\Icons\save.ico" />
+    <Content Include="AppData\Icons\save.png" />
+    <Content Include="AppData\Icons\save_as.ico" />
+    <Content Include="AppData\Icons\save_as.png" />
+    <Content Include="AppData\Icons\schedule.ico" />
+    <Content Include="AppData\Icons\script.ico" />
+    <Content Include="AppData\Icons\search.ico" />
+    <Content Include="AppData\Icons\shield.ico" />
+    <Content Include="AppData\Icons\shopping cart.ico" />
+    <Content Include="AppData\Icons\silence.ico" />
+    <Content Include="AppData\Icons\smile.ico" />
+    <Content Include="AppData\Icons\sound.ico" />
+    <Content Include="AppData\Icons\stock graph.ico" />
+    <Content Include="AppData\Icons\stop sign.ico" />
+    <Content Include="AppData\Icons\stop.ico" />
+    <Content Include="AppData\Icons\stopwatch.ico" />
+    <Content Include="AppData\Icons\sum.ico" />
+    <Content Include="AppData\Icons\sync.ico" />
+    <Content Include="AppData\Icons\table.ico" />
+    <Content Include="AppData\Icons\target.ico" />
+    <Content Include="AppData\Icons\taxi.ico" />
+    <Content Include="AppData\Icons\terminate.ico" />
+    <Content Include="AppData\Icons\text preview.ico" />
+    <Content Include="AppData\Icons\text.ico" />
+    <Content Include="AppData\Icons\thumbs down.ico" />
+    <Content Include="AppData\Icons\thumbs up.ico" />
+    <Content Include="AppData\Icons\toolbox.ico" />
+    <Content Include="AppData\Icons\top.ico" />
+    <Content Include="AppData\Icons\trackback.ico" />
+    <Content Include="AppData\Icons\trash.ico" />
+    <Content Include="AppData\Icons\tune.ico" />
+    <Content Include="AppData\Icons\turn off.ico" />
+    <Content Include="AppData\Icons\twitter.ico" />
+    <Content Include="AppData\Icons\u.png" />
+    <Content Include="AppData\Icons\underline_2087924.png" />
+    <Content Include="AppData\Icons\undo.ico" />
+    <Content Include="AppData\Icons\unlock.ico" />
+    <Content Include="AppData\Icons\up-down.ico" />
+    <Content Include="AppData\Icons\up.ico" />
+    <Content Include="AppData\Icons\update.ico" />
+    <Content Include="AppData\Icons\upload.ico" />
+    <Content Include="AppData\Icons\user group.ico" />
+    <Content Include="AppData\Icons\view.ico" />
+    <Content Include="AppData\Icons\volume.ico" />
+    <Content Include="AppData\Icons\wallet.ico" />
+    <Content Include="AppData\Icons\warning.ico" />
+    <Content Include="AppData\Icons\Wordpad.ico" />
+    <Content Include="AppData\Icons\Wordpad2.ico" />
+    <Content Include="AppData\Icons\wrench.ico" />
+    <Content Include="AppData\Icons\x.png" />
+    <Content Include="AppData\Icons\yellow bookmark.ico" />
+    <Content Include="AppData\Icons\yellow pin.ico" />
+    <Content Include="AppData\Icons\yellow tag.ico" />
+    <Content Include="AppData\Icons\yes.ico" />
+    <Content Include="AppData\Icons\z100.png" />
+    <Content Include="AppData\Icons\zi.png" />
+    <Content Include="AppData\Icons\zo.png" />
+    <Content Include="AppData\Icons\zoom.ico" />
+    <Content Include="AppData\Imgs\1_27.jpg" />
+    <Content Include="AppData\Imgs\image1.jpg" />
+    <Content Include="AppData\Imgs\image10.jpg" />
+    <Content Include="AppData\Imgs\image11.png" />
+    <Content Include="AppData\Imgs\image12.jpg" />
+    <Content Include="AppData\Imgs\image13.jpg" />
+    <Content Include="AppData\Imgs\image2.jpg" />
+    <Content Include="AppData\Imgs\image3.jpg" />
+    <Content Include="AppData\Imgs\image4.jpg" />
+    <Content Include="AppData\Imgs\image5.jpg" />
+    <Content Include="AppData\Imgs\image6.jpg" />
+    <Content Include="AppData\Imgs\image7.jpg" />
+    <Content Include="AppData\Imgs\image8.jpg" />
+    <Content Include="AppData\Imgs\image9.jpg" />
+    <Content Include="AppData\Imgs\images14jpg.jpg" />
+    <Content Include="AppData\Imgs\Login1.png" />
+    <Content Include="AppData\Imgs\Login10.png" />
+    <Content Include="AppData\Imgs\Login11.png" />
+    <Content Include="AppData\Imgs\Login12.png" />
+    <Content Include="AppData\Imgs\Login13.png" />
+    <Content Include="AppData\Imgs\Login14.png" />
+    <Content Include="AppData\Imgs\Login2.jpg" />
+    <Content Include="AppData\Imgs\Login3.jpg" />
+    <Content Include="AppData\Imgs\Login4.png" />
+    <Content Include="AppData\Imgs\Login5.png" />
+    <Content Include="AppData\Imgs\Login6.jpg" />
+    <Content Include="AppData\Imgs\Login7.png" />
+    <Content Include="AppData\Imgs\Login8.png" />
+    <Content Include="AppData\Imgs\Login9.png" />
+    <Content Include="AppData\QuanLyCafe.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />

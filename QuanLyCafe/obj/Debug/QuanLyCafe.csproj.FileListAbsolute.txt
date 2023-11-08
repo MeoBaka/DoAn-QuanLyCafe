@@ -16,3 +16,5 @@ D:\DoAn\Winform\DoAn-QuanLyCafe\QuanLyCafe\bin\Debug\Newtonsoft.Json.xml
 D:\DoAn\Winform\DoAn-QuanLyCafe\QuanLyCafe\bin\Debug\RestSharp.xml
 D:\DoAn\Winform\DoAn-QuanLyCafe\QuanLyCafe\obj\Debug\QuanLyCafe.csproj.Fody.CopyLocal.cache
 D:\DoAn\Winform\DoAn-QuanLyCafe\QuanLyCafe\obj\Debug\CustomControls.RJControls.RJTextBox.resources
+D:\DoAn\Winform\DoAn-QuanLyCafe\QuanLyCafe\bin\Debug\QuanLyCafe.exe.config
+D:\DoAn\Winform\DoAn-QuanLyCafe\QuanLyCafe\obj\Debug\QuanLyCafe.GUI.frmMain.resources
