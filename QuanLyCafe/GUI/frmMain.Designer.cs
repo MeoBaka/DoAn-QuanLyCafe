@@ -29,9 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Bunifu.UI.WinForms.BunifuFormCaptionButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuFormCaptionButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuFormCaptionButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuFormCaptionButton.BorderEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnTop = new System.Windows.Forms.Panel();
+            this.btn_CloseButton = new Bunifu.UI.WinForms.BunifuFormCaptionButton();
+            this.btn_MaxSize = new System.Windows.Forms.Label();
+            this.btn_MinSize = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Label();
             this.pnMerge = new System.Windows.Forms.Panel();
             this.lbl_Title = new System.Windows.Forms.Label();
             this.pnLeft = new System.Windows.Forms.Panel();
@@ -42,12 +46,8 @@
             this.drgLabelDrag = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.drgPanel = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.drgPnMerge = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.btnClose = new System.Windows.Forms.Label();
-            this.btn_MinSize = new System.Windows.Forms.Label();
-            this.btn_MaxSize = new System.Windows.Forms.Label();
             this.rzForm = new Guna.UI2.WinForms.Guna2ResizeForm(this.components);
             this.pnTakeForm = new System.Windows.Forms.Panel();
-            this.btn_CloseButton = new Bunifu.UI.WinForms.BunifuFormCaptionButton();
             this.pnTop.SuspendLayout();
             this.pnMerge.SuspendLayout();
             this.pnLeft.SuspendLayout();
@@ -64,9 +64,92 @@
             this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTop.Location = new System.Drawing.Point(0, 0);
             this.pnTop.Name = "pnTop";
-            this.pnTop.Size = new System.Drawing.Size(1103, 42);
+            this.pnTop.Size = new System.Drawing.Size(1200, 40);
             this.pnTop.TabIndex = 0;
             this.pnTop.DoubleClick += new System.EventHandler(this.btn_MaxSize_Click);
+            // 
+            // btn_CloseButton
+            // 
+            this.btn_CloseButton.AllowAnimations = true;
+            this.btn_CloseButton.AllowBorderColorChanges = true;
+            this.btn_CloseButton.AllowDefaults = true;
+            this.btn_CloseButton.AllowMouseEffects = true;
+            this.btn_CloseButton.AnimationSpeed = 200;
+            this.btn_CloseButton.AutoSizeCaptions = true;
+            this.btn_CloseButton.BackColor = System.Drawing.Color.Transparent;
+            this.btn_CloseButton.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.btn_CloseButton.BackHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_CloseButton.BackPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btn_CloseButton.BorderColor = System.Drawing.Color.Empty;
+            this.btn_CloseButton.BorderHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_CloseButton.BorderPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_CloseButton.BorderRadius = 1;
+            this.btn_CloseButton.BorderStyle = Bunifu.UI.WinForms.BunifuFormCaptionButton.BorderStyles.Solid;
+            this.btn_CloseButton.BorderThickness = 1;
+            this.btn_CloseButton.CaptionType = Bunifu.UI.WinForms.BunifuFormCaptionButton.CaptionTypes.Minimize;
+            this.btn_CloseButton.ColorContrastOnClick = 30;
+            this.btn_CloseButton.ColorContrastOnHover = 30;
+            this.btn_CloseButton.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btn_CloseButton.CustomizableEdges = borderEdges3;
+            this.btn_CloseButton.DefaultBorderColor = System.Drawing.Color.Empty;
+            this.btn_CloseButton.DefaultColor = System.Drawing.Color.RoyalBlue;
+            this.btn_CloseButton.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_CloseButton.IconColor = System.Drawing.Color.Black;
+            this.btn_CloseButton.IconHoverColor = System.Drawing.Color.Black;
+            this.btn_CloseButton.IconPressedColor = System.Drawing.Color.Black;
+            this.btn_CloseButton.Image = ((System.Drawing.Image)(resources.GetObject("btn_CloseButton.Image")));
+            this.btn_CloseButton.ImageMargin = new System.Windows.Forms.Padding(1, 1, 0, 0);
+            this.btn_CloseButton.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_CloseButton.Location = new System.Drawing.Point(157, 0);
+            this.btn_CloseButton.Name = "btn_CloseButton";
+            this.btn_CloseButton.ShowBorders = true;
+            this.btn_CloseButton.Size = new System.Drawing.Size(58, 42);
+            this.btn_CloseButton.TabIndex = 1;
+            this.btn_CloseButton.Visible = false;
+            this.btn_CloseButton.Click += new System.EventHandler(this.btn_CloseButton_Click);
+            // 
+            // btn_MaxSize
+            // 
+            this.btn_MaxSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_MaxSize.AutoSize = true;
+            this.btn_MaxSize.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btn_MaxSize.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_MaxSize.Location = new System.Drawing.Point(1128, 13);
+            this.btn_MaxSize.Name = "btn_MaxSize";
+            this.btn_MaxSize.Size = new System.Drawing.Size(27, 17);
+            this.btn_MaxSize.TabIndex = 4;
+            this.btn_MaxSize.Text = "🔲";
+            this.btn_MaxSize.Click += new System.EventHandler(this.btn_MaxSize_Click);
+            // 
+            // btn_MinSize
+            // 
+            this.btn_MinSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_MinSize.AutoSize = true;
+            this.btn_MinSize.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btn_MinSize.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_MinSize.Location = new System.Drawing.Point(1095, 13);
+            this.btn_MinSize.Name = "btn_MinSize";
+            this.btn_MinSize.Size = new System.Drawing.Size(18, 17);
+            this.btn_MinSize.TabIndex = 3;
+            this.btn_MinSize.Text = "__";
+            this.btn_MinSize.Click += new System.EventHandler(this.btn_MinSize_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.AutoSize = true;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnClose.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnClose.Location = new System.Drawing.Point(1161, 13);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(27, 17);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.Text = "❌";
+            this.btnClose.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // pnMerge
             // 
@@ -74,7 +157,7 @@
             this.pnMerge.Controls.Add(this.lbl_Title);
             this.pnMerge.Location = new System.Drawing.Point(0, 0);
             this.pnMerge.Name = "pnMerge";
-            this.pnMerge.Size = new System.Drawing.Size(157, 42);
+            this.pnMerge.Size = new System.Drawing.Size(150, 40);
             this.pnMerge.TabIndex = 2;
             // 
             // lbl_Title
@@ -96,9 +179,9 @@
             this.pnLeft.Controls.Add(this.btnAdmin);
             this.pnLeft.Controls.Add(this.btnTable);
             this.pnLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnLeft.Location = new System.Drawing.Point(0, 42);
+            this.pnLeft.Location = new System.Drawing.Point(0, 40);
             this.pnLeft.Name = "pnLeft";
-            this.pnLeft.Size = new System.Drawing.Size(157, 476);
+            this.pnLeft.Size = new System.Drawing.Size(150, 560);
             this.pnLeft.TabIndex = 1;
             // 
             // btnLogOut
@@ -108,7 +191,7 @@
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.ForeColor = System.Drawing.Color.Yellow;
-            this.btnLogOut.Location = new System.Drawing.Point(3, 434);
+            this.btnLogOut.Location = new System.Drawing.Point(3, 518);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(151, 39);
             this.btnLogOut.TabIndex = 0;
@@ -177,45 +260,6 @@
             this.drgPnMerge.TargetControl = this.pnMerge;
             this.drgPnMerge.UseTransparentDrag = true;
             // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.AutoSize = true;
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnClose.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnClose.Location = new System.Drawing.Point(1064, 13);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(27, 17);
-            this.btnClose.TabIndex = 2;
-            this.btnClose.Text = "❌";
-            this.btnClose.Click += new System.EventHandler(this.btnLogOut_Click);
-            // 
-            // btn_MinSize
-            // 
-            this.btn_MinSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_MinSize.AutoSize = true;
-            this.btn_MinSize.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_MinSize.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_MinSize.Location = new System.Drawing.Point(998, 13);
-            this.btn_MinSize.Name = "btn_MinSize";
-            this.btn_MinSize.Size = new System.Drawing.Size(18, 17);
-            this.btn_MinSize.TabIndex = 3;
-            this.btn_MinSize.Text = "__";
-            this.btn_MinSize.Click += new System.EventHandler(this.btn_MinSize_Click);
-            // 
-            // btn_MaxSize
-            // 
-            this.btn_MaxSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_MaxSize.AutoSize = true;
-            this.btn_MaxSize.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_MaxSize.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_MaxSize.Location = new System.Drawing.Point(1031, 13);
-            this.btn_MaxSize.Name = "btn_MaxSize";
-            this.btn_MaxSize.Size = new System.Drawing.Size(27, 17);
-            this.btn_MaxSize.TabIndex = 4;
-            this.btn_MaxSize.Text = "🔲";
-            this.btn_MaxSize.Click += new System.EventHandler(this.btn_MaxSize_Click);
-            // 
             // rzForm
             // 
             this.rzForm.TargetForm = this;
@@ -224,60 +268,16 @@
             // 
             this.pnTakeForm.BackColor = System.Drawing.Color.White;
             this.pnTakeForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnTakeForm.Location = new System.Drawing.Point(157, 42);
+            this.pnTakeForm.Location = new System.Drawing.Point(150, 40);
             this.pnTakeForm.Name = "pnTakeForm";
-            this.pnTakeForm.Size = new System.Drawing.Size(946, 476);
+            this.pnTakeForm.Size = new System.Drawing.Size(1050, 560);
             this.pnTakeForm.TabIndex = 2;
-            // 
-            // btn_CloseButton
-            // 
-            this.btn_CloseButton.AllowAnimations = true;
-            this.btn_CloseButton.AllowBorderColorChanges = true;
-            this.btn_CloseButton.AllowDefaults = true;
-            this.btn_CloseButton.AllowMouseEffects = true;
-            this.btn_CloseButton.AnimationSpeed = 200;
-            this.btn_CloseButton.AutoSizeCaptions = true;
-            this.btn_CloseButton.BackColor = System.Drawing.Color.Transparent;
-            this.btn_CloseButton.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.btn_CloseButton.BackHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btn_CloseButton.BackPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btn_CloseButton.BorderColor = System.Drawing.Color.Empty;
-            this.btn_CloseButton.BorderHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btn_CloseButton.BorderPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btn_CloseButton.BorderRadius = 1;
-            this.btn_CloseButton.BorderStyle = Bunifu.UI.WinForms.BunifuFormCaptionButton.BorderStyles.Solid;
-            this.btn_CloseButton.BorderThickness = 1;
-            this.btn_CloseButton.CaptionType = Bunifu.UI.WinForms.BunifuFormCaptionButton.CaptionTypes.Minimize;
-            this.btn_CloseButton.ColorContrastOnClick = 30;
-            this.btn_CloseButton.ColorContrastOnHover = 30;
-            this.btn_CloseButton.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btn_CloseButton.CustomizableEdges = borderEdges2;
-            this.btn_CloseButton.DefaultBorderColor = System.Drawing.Color.Empty;
-            this.btn_CloseButton.DefaultColor = System.Drawing.Color.RoyalBlue;
-            this.btn_CloseButton.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btn_CloseButton.IconColor = System.Drawing.Color.Black;
-            this.btn_CloseButton.IconHoverColor = System.Drawing.Color.Black;
-            this.btn_CloseButton.IconPressedColor = System.Drawing.Color.Black;
-            this.btn_CloseButton.Image = ((System.Drawing.Image)(resources.GetObject("btn_CloseButton.Image")));
-            this.btn_CloseButton.ImageMargin = new System.Windows.Forms.Padding(1, 1, 0, 0);
-            this.btn_CloseButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_CloseButton.Location = new System.Drawing.Point(157, 0);
-            this.btn_CloseButton.Name = "btn_CloseButton";
-            this.btn_CloseButton.ShowBorders = true;
-            this.btn_CloseButton.Size = new System.Drawing.Size(58, 42);
-            this.btn_CloseButton.TabIndex = 1;
-            this.btn_CloseButton.Visible = false;
-            this.btn_CloseButton.Click += new System.EventHandler(this.btn_CloseButton_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1103, 518);
+            this.ClientSize = new System.Drawing.Size(1200, 600);
             this.Controls.Add(this.pnTakeForm);
             this.Controls.Add(this.pnLeft);
             this.Controls.Add(this.pnTop);
