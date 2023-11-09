@@ -46,5 +46,9 @@ namespace QuanLyCafe.BLL
         {
             return provider.ExecuteNonQuery(data1, data2, data3, data4);
         }
+        public int UserExecuteScalar(string data1, string[] data2, object[] data3)
+        {
+            return provider.ExecuteScalar(data1, data2, data3);
+        }
     }
 }

@@ -27,6 +27,7 @@ end
 
 USP_CHECKLOGIN 'lap', '123123';
 SELECT * FROM M3_ACCOUNT
+
 -- DATA
 INSERT INTO M3_ACCOUNT VALUES
 ('1', 'admin', '123321', 'staff'),

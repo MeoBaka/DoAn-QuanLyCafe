@@ -14,7 +14,7 @@ namespace QuanLyCafe.DAL
         {
             string connectionStr = ConfigurationManager.ConnectionStrings["ConnectStr"].ConnectionString.ToString();
             connection = new SqlConnection(connectionStr);
-            if (connection.State == ConnectionState.Closed || connection.State == ConnectionState.Broken)
+            if ((connection.State == ConnectionState.Closed) || (connection.State == ConnectionState.Broken))
             {
                 connection.Open();
                 return true;
@@ -30,54 +30,52 @@ namespace QuanLyCafe.DAL
             connection.Dispose();
         }
 
-        public SqlCommand Command(string data1, string[] data2, object[] data3, bool isStored)
+        public SqlCommand Command(string query, string[] para, object[] Values, bool isStored)
         {
-            SqlCommand cmd = new SqlCommand(data1, connection);
+            SqlCommand cmd = new SqlCommand(query, connection);
             if (isStored)
             {
-                cmd.CommandText = data1;
+                cmd.CommandText = query;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Connection = connection;
             }
-            if (data2 != null)
+            if (para != null)
             {
-                for (int i = 0; i < data2.Length; i++)
+                for (int i = 0; i < para.Length; i++)
                 {
-                    cmd.Parameters.AddWithValue(data2[i], data3[i]);
+                    cmd.Parameters.AddWithValue(para[i], Values[i]);
                 }
             }
             return cmd;
         }
 
-        public SqlDataReader sqlDataReader(string data1, string[] data2, object[] data3, bool isStored)
+        public SqlDataReader ExecuteReader(string query, string[] para, object[] Values, bool isStored)
         {
-            SqlDataReader reader = Command(data1, data2, data3, isStored).ExecuteReader();
+            SqlDataReader reader = Command(query, para, Values, isStored).ExecuteReader();
             Disconnect();
             return reader;
         }
-
-        public int ExecuteNonQuery(string data1, string[] data2, object[] data3, bool isStored)
+        public int ExecuteNonQuery(string query, string[] para, object[] Values, bool isStored)
         {
-            int reader = Command(data1, data2, data3, isStored).ExecuteNonQuery();
+            int rec = Command(query, para, Values, isStored).ExecuteNonQuery();
             Disconnect();
-            return reader;
+            return rec;
         }
-
-        public int ExecuteScalar(string data1, string[] data2, object[] data3)
+        public int ExecuteScalar(string query, string[] para, object[] Values)
         {
-            int reader = (int)Command(data1, data2, data3, false).ExecuteScalar();
+            int scalar = (int)Command(query, para, Values, false).ExecuteScalar();
             Disconnect();
-            return reader;
+            return scalar;
         }
-
-        public DataTable GetData(string data1, string[] data2, object[] data3, bool isStored)
+        public DataTable GetData(string query, string[] para, object[] Values, bool isStored)
         {
-            DataTable dt = new DataTable();
-            SqlCommand cmd = Command(data1, data2, data3, false);
+            DataTable tbl = new DataTable();
+            SqlCommand cmd = Command(query, para, Values, isStored);
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
+            da.Fill(tbl);
             Disconnect();
-            return dt;
+            return tbl;
         }
     }
 }

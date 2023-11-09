@@ -18,3 +18,5 @@ D:\DoAn\Winform\DoAn-QuanLyCafe\QuanLyCafe\obj\Debug\QuanLyCafe.csproj.Fody.Copy
 D:\DoAn\Winform\DoAn-QuanLyCafe\QuanLyCafe\obj\Debug\CustomControls.RJControls.RJTextBox.resources
 D:\DoAn\Winform\DoAn-QuanLyCafe\QuanLyCafe\bin\Debug\QuanLyCafe.exe.config
 D:\DoAn\Winform\DoAn-QuanLyCafe\QuanLyCafe\obj\Debug\QuanLyCafe.GUI.frmMain.resources
+D:\DoAn\Winform\DoAn-QuanLyCafe\QuanLyCafe\obj\Debug\QuanLyCafe.GUI.CLDUI.frmTable.resources
+D:\DoAn\Winform\DoAn-QuanLyCafe\QuanLyCafe\obj\Debug\QuanLyCafe.GUI.CLDUI.frmPageMain.resources

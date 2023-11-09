@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
@@ -14,6 +15,7 @@ namespace QuanLyCafe.GUI
 {
     public partial class frmLogin : Form
     {
+
         User user;
         public frmLogin()
         {
@@ -32,12 +34,12 @@ namespace QuanLyCafe.GUI
 
         private int DangNhap(User us)
         {
-            string spName = "USP_CHECKLOGIN";
+            string spName = "USP_CHECKLOGIN @tk, @mk";
             string[] Para = { "@tk", "@mk" };
-            object[] values = { txt_User.Texts.ToUpper() , txt_Pass.Texts };
-            Console.WriteLine(txt_User.Texts);
+            object[] values = { txt_User.Texts, txt_Pass.Texts };
+            Console.WriteLine(txt_User.Texts); 
             Console.WriteLine(txt_Pass.Texts);
-            return us.UserExecuteNonQuery(spName, Para, values, true);
+            return us.UserExecuteScalar(spName, Para, values);
         }
 
         private void btn_Login_Click(object sender, EventArgs e)
@@ -47,7 +49,10 @@ namespace QuanLyCafe.GUI
             user = new User();
             if (user.Connect())
             {
-                if(user.CheckUser(txt_User.Texts,txt_Pass.Texts) > 0)
+                //user.CheckUser(txt_User.Texts, txt_Pass.Texts);
+                int dnstatus = DangNhap(user);
+                Console.WriteLine(dnstatus.ToString());
+                if (dnstatus > 0)
                 {
                     frmMain frmMain = new frmMain();
                     this.Hide();
@@ -67,6 +72,17 @@ namespace QuanLyCafe.GUI
                 lbl_thongbao.Text = "Không Có Kết Nối Đến Database hoặc Rớt Mạng";
             }
         }
-        
+
+        private void cb_showpass_CheckedChanged(object sender, EventArgs e)
+        {
+            if(cb_showpass.Checked)
+            {
+                txt_Pass.PasswordChar = false;
+            }
+            else
+            {
+                txt_Pass.PasswordChar = true;
+            }
+        }
     }
 }
