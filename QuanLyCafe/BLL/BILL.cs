@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 
 namespace QuanLyCafe.BLL
 {
-    internal class Table
+    internal class BILL
     {
         DAL.Provider provider = new DAL.Provider();
 
@@ -32,18 +32,14 @@ namespace QuanLyCafe.BLL
             string[] values = { };
             return provider.GetData("SELECT * FROM M3_TABLE", Param, values, false);
         }
-
-        public DataTable GetlSVDon(string tenban)
+        public DataTable GetDataLSV()
         {
-            DataTable table = new DataTable();
-            string strsql = $"SELECT TENMON, DONGIA, SOLUONG, THANHTIEN FROM M3_LOGDON WHERE NAME = '{tenban}'";
-            SqlCommand Cmd = new SqlCommand(strsql, Connection());
-            SqlDataAdapter adapter = new SqlDataAdapter(Cmd);
-            adapter.Fill(table);
-            return table;
+            string[] Param = { };
+            string[] values = { };
+            return provider.GetData("SELECT * FROM M3_LOGDON", Param, values, false);
         }
 
-
+        
         public int TableExecuteNonQuery(string sql, string[] param, object[] value, bool isStored)
         {
             return provider.ExecuteNonQuery(sql, param, value, isStored);

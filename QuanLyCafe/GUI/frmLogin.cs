@@ -14,7 +14,7 @@ namespace QuanLyCafe.GUI
         {
             InitializeComponent();
             this.ControlBox = false;
-            this.Text = String.Empty;
+            this.Text = $"Đăng Nhập Hệ Thống";
             lbl_thongbao.AutoSize = false;
             lbl_thongbao.Height = 180;
         }

@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Linq;
 using System.Configuration;
+using System.Windows.Forms;
 
 namespace QuanLyCafe.DAL
 {
@@ -77,5 +78,6 @@ namespace QuanLyCafe.DAL
             Disconnect();
             return tbl;
         }
+
     }
 }

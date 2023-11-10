@@ -16,6 +16,142 @@ CREATE TABLE M3_LOGS(
 	STATUS TEXT
 )
 GO
+
+
+
+
+
+CREATE TABLE M3_LOAI(
+	ID INT PRIMARY KEY,
+	TENLOAI NVARCHAR(100)
+)
+INSERT INTO M3_LOAI VALUES
+('1', N'CÀ PHÊ'),
+('2', N'TRÀ'),
+('3', N'FREEZE'),
+('4', N'BÁNH MÌ'),
+('5', N'BÁNH'),
+('6', N'KHÁC')
+SELECT TENLOAI FROM M3_LOAI
+CREATE TABLE M3_DON(
+	ID INT PRIMARY KEY,
+	TENLOAI NVARCHAR(100),
+	TENDON NVARCHAR(100),
+	MSIZE NVARCHAR(100),
+	GIATIEN MONEY
+)
+INSERT INTO M3_DON VALUES
+('1', N'CÀ PHÊ', N'CÀ PHÊ SỮA ĐÁ', N'NHỎ', 29000),
+('2', N'CÀ PHÊ', N'CÀ PHÊ SỮA ĐÁ', N'VỪA', 35000),
+('3', N'CÀ PHÊ', N'CÀ PHÊ SỮA ĐÁ', N'LỚN', 39000),
+
+('4', N'CÀ PHÊ', N'CÀ PHÊ ĐEN ĐÁ', N'NHỎ', 29000),
+('5', N'CÀ PHÊ', N'CÀ PHÊ ĐEN ĐÁ', N'VỪA', 35000),
+('6', N'CÀ PHÊ', N'CÀ PHÊ ĐEN ĐÁ', N'LỚN', 39000),
+
+('7', N'CÀ PHÊ', N'CÀ PHÊ BẠC XỈU ĐÁ', N'NHỎ', 29000),
+('8', N'CÀ PHÊ', N'CÀ PHÊ BẠC XỈU ĐÁ', N'VỪA', 35000),
+('9', N'CÀ PHÊ', N'CÀ PHÊ BẠC XỈU ĐÁ', N'LỚN', 39000),
+
+('10', N'CÀ PHÊ', N'ESPRESSO / AMERICANO', N'NHỎ', 35000),
+('11', N'CÀ PHÊ', N'ESPRESSO / AMERICANO', N'VỪA', 39000),
+('12', N'CÀ PHÊ', N'ESPRESSO / AMERICANO', N'LỚN', 45000),
+
+('13', N'CÀ PHÊ', N'CAPPUCCINO / LATTE', N'NHỎ', 55000),
+('14', N'CÀ PHÊ', N'ECAPPUCCINO / LATTE', N'VỪA', 65000),
+('15', N'CÀ PHÊ', N'CAPPUCCINO / LATTE', N'LỚN', 69000),
+
+('16', N'CÀ PHÊ', N'MOCHA / CARAMEL MACCHIATO', N'NHỎ', 59000),
+('17', N'CÀ PHÊ', N'ESPRESSO / AMERICANO', N'VỪA', 69000),
+('18', N'CÀ PHÊ', N'ESPRESSO / AMERICANO', N'LỚN', 75000),
+
+('19', N'TRÀ', N'TRÀ SEN VÀNG', N'NHỎ', 39000),
+('20', N'TRÀ', N'TRÀ SEN VÀNG', N'VỪA', 49000),
+('21', N'TRÀ', N'TRÀ SEN VÀNG', N'LỚN', 55000),
+
+('22', N'TRÀ', N'TRÀ THẠCH ĐÀO', N'NHỎ', 39000),
+('23', N'TRÀ', N'TRÀ THẠCH ĐÀO', N'VỪA', 49000),
+('24', N'TRÀ', N'TRÀ THẠCH ĐÀO', N'LỚN', 55000),
+
+('25', N'TRÀ', N'TRÀ THANH ĐÀO', N'NHỎ', 39000),
+('26', N'TRÀ', N'TRÀ THANH ĐÀO', N'VỪA', 49000),
+('27', N'TRÀ', N'TRÀ THANH ĐÀO', N'LỚN', 55000),
+
+('28', N'TRÀ', N'TRÀ THẠCH VẢI', N'NHỎ', 39000),
+('29', N'TRÀ', N'TRÀ THẠCH VẢI', N'VỪA', 49000),
+('30', N'TRÀ', N'TRÀ THẠCH VẢI', N'LỚN', 55000),
+
+('31', N'TRÀ', N'TRÀ XANH ĐẬU ĐỎ', N'NHỎ', 39000),
+('32', N'TRÀ', N'TRÀ XANH ĐẬU ĐỎ', N'VỪA', 49000),
+('33', N'TRÀ', N'TRÀ XANH ĐẬU ĐỎ', N'LỚN', 55000),
+
+('34', N'FREEZE', N'FREEZE TRÀ XANH', N'NHỎ', 49000),
+('35', N'FREEZE', N'FREEZE TRÀ XANH', N'VỪA', 59000),
+('36', N'FREEZE', N'FREEZE TRÀ XANH', N'LỚN', 65000),
+
+('37', N'FREEZE', N'FREEZE SÔ-CÔ-LA', N'NHỎ', 49000),
+('38', N'FREEZE', N'FREEZE SÔ-CÔ-LA', N'VỪA', 59000),
+('39', N'FREEZE', N'FREEZE SÔ-CÔ-LA', N'LỚN', 65000),
+
+('40', N'FREEZE', N'COOKIES & CREAM', N'NHỎ', 49000),
+('41', N'FREEZE', N'COOKIES & CREAM', N'VỪA', 59000),
+('42', N'FREEZE', N'COOKIES & CREAM', N'LỚN', 65000),
+
+('43', N'FREEZE', N'CARAMEL PHIN FREEZE', N'NHỎ', 49000),
+('44', N'FREEZE', N'CARAMEL PHIN FREEZE', N'VỪA', 59000),
+('45', N'FREEZE', N'CARAMEL PHIN FREEZE', N'LỚN', 65000),
+
+('46', N'FREEZE', N'CLASSIC PHIN FREEZE', N'NHỎ', 49000),
+('47', N'FREEZE', N'CLASSIC PHIN FREEZE', N'VỪA', 59000),
+('48', N'FREEZE', N'CLASSIC PHIN FREEZE', N'LỚN', 65000),
+
+('49', N'BÁNH MÌ', N'GÀ XÉ', N'NHỎ', 19000),
+('50', N'BÁNH MÌ', N'CÀ RI GÀ', N'NHỎ', 19000),
+('51', N'BÁNH MÌ', N'CÁ NGỪ', N'NHỎ', 19000),
+('52', N'BÁNH MÌ', N'NẤM', N'NHỎ', 19000),
+
+('53', N'BÁNH', N'TIRAMISU', N'NHỎ', 19000),
+('54', N'BÁNH', N'BÁNH CHUỐI', N'NHỎ', 19000),
+
+('55', N'BÁNH', N'MOUSSE ĐÀO', N'NHỎ', 29000),
+('56', N'BÁNH', N'MOUSSE CACAO', N'NHỎ', 29000),
+('57', N'BÁNH', N'PHÔ MAI TRÀ XANH', N'NHỎ', 29000),
+('58', N'BÁNH', N'PHÔ MAI CANH DÂY', N'NHỎ', 29000),
+('59', N'BÁNH', N'PHÔ MAI CÀ PHÊ', N'NHỎ', 29000),
+('60', N'BÁNH', N'PHÔ MAI CARAMEL', N'NHỎ', 29000),
+('61', N'BÁNH', N'SÔ-CÔ-LA HIGHLANDS', N'NHỎ', 29000),
+
+('62', N'KHÁC', N'CHANH ĐÁ XAY/ĐÁ VIÊN', N'NHỎ', 39000),
+('63', N'KHÁC', N'CHANH ĐÁ XAY/ĐÁ VIÊN', N'VỪA', 49000),
+('64', N'KHÁC', N'CHANH ĐÁ XAY/ĐÁ VIÊN', N'LỚN', 55000),
+
+('65', N'KHÁC', N'CHANH DÂ ĐÁ VIÊN', N'NHỎ', 39000),
+('66', N'KHÁC', N'CHANH DÂ ĐÁ VIÊN', N'VỪA', 49000),
+('67', N'KHÁC', N'CHANH DÂ ĐÁ VIÊN', N'LỚN', 55000),
+
+('68', N'KHÁC', N'TẮC/QUẤT ĐÁ VIÊN', N'NHỎ', 39000),
+('69', N'KHÁC', N'TẮC/QUẤT ĐÁ VIÊN', N'VỪA', 49000),
+('70', N'KHÁC', N'TẮC/QUẤT ĐÁ VIÊN', N'LỚN', 55000),
+
+('71', N'KHÁC', N'SÔ-CÔ-LA', N'NHỎ', 54000),
+('72', N'KHÁC', N'SÔ-CÔ-LA', N'VỪA', 59000),
+('73', N'KHÁC', N'SÔ-CÔ-LA', N'LỚN', 65000)
+
+DROP PROCEDURE TIMDON
+CREATE PROCEDURE TIMDON
+	@loai NVARCHAR(100)
+AS
+BEGIN
+	SELECT GIATIEN MSIZE TENDON FROM M3_DON WHERE TENLOAI = @loai
+END
+
+
+
+
+
+
+
+GO
 DROP TABLE M3_TABLE
 CREATE  TABLE M3_TABLE(
 	SOBAN INT PRIMARY KEY,
@@ -24,9 +160,37 @@ CREATE  TABLE M3_TABLE(
 )
 GO
 INSERT INTO M3_TABLE VALUES
-('1', N'Bàn 1', N'Trống')
+('1', N'Bàn 1', N'Trống'),
+('2', N'Bàn 2', N'Trống'),
+('3', N'Bàn 3', N'Trống'),
+('4', N'Bàn 4', N'Trống'),
+('5', N'Bàn 5', N'Trống'),
+('6', N'Bàn 6', N'Trống'),
+('7', N'Bàn 7', N'Trống'),
+('8', N'Bàn 8', N'Trống'),
+('9', N'Bàn 9', N'Trống'),
+('10', N'Bàn 10', N'Trống'),
+('11', N'Bàn 11', N'Trống'),
+('13', N'Bàn 12', N'Trống')
 SELECT * FROM M3_TABLE
+
 GO
+DROP TABLE M3_LOGDON
+
+CREATE TABLE M3_LOGDON(
+	NAME NVARCHAR(100),
+	TENMON NVARCHAR(100),
+	DONGIA MONEY,
+	SOLUONG INT,
+	THANHTIEN MONEY,
+)
+SELECT * FROM M3_LOGDON
+GO
+CREATE TABLE M3_BILL(
+	SOBAN INT PRIMARY KEY,
+	TENBAN NVARCHAR(100),
+)
+SELECT TENMON, DONGIA, SOLUONG, THANHTIEN FROM M3_LOGDON WHERE NAME = 'Bàn 1'
 -- PROCEDURE
 CREATE PROCEDURE USP_CHECKLOGIN
 	@tk NVARCHAR(18),

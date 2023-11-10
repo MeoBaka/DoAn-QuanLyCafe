@@ -85,6 +85,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BILL.cs" />
+    <Compile Include="BLL\LoaiDon.cs" />
     <Compile Include="BLL\Table.cs" />
     <Compile Include="BLL\User.cs" />
     <Compile Include="Controls\RJTextBox.cs">

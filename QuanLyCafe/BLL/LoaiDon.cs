@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace QuanLyCafe.BLL
 {
-    internal class Table
+    internal class LoaiDon
     {
         DAL.Provider provider = new DAL.Provider();
 
@@ -26,17 +27,26 @@ namespace QuanLyCafe.BLL
             provider.Disconnect();
         }
 
-        public DataTable GetDataTable()
+        public DataTable GetDataLoaiDon()
         {
             string[] Param = { };
             string[] values = { };
-            return provider.GetData("SELECT * FROM M3_TABLE", Param, values, false);
+            return provider.GetData("SELECT * FROM TABLE", Param, values, false);
         }
 
-        public DataTable GetlSVDon(string tenban)
+        public DataTable GetDon()
         {
             DataTable table = new DataTable();
-            string strsql = $"SELECT TENMON, DONGIA, SOLUONG, THANHTIEN FROM M3_LOGDON WHERE NAME = '{tenban}'";
+            string strsql = "SELECT TENLOAI FROM M3_LOAI";
+            SqlCommand Cmd = new SqlCommand(strsql, Connection());
+            SqlDataAdapter adapter = new SqlDataAdapter(Cmd);
+            adapter.Fill(table);
+            return table;
+        }
+        public DataTable NhanCDDon(string loai)
+        {
+            DataTable table = new DataTable();
+            string strsql = $"SELECT * FROM M3_DON WHERE TENLOAI = '{loai}'";
             SqlCommand Cmd = new SqlCommand(strsql, Connection());
             SqlDataAdapter adapter = new SqlDataAdapter(Cmd);
             adapter.Fill(table);
@@ -44,11 +54,11 @@ namespace QuanLyCafe.BLL
         }
 
 
-        public int TableExecuteNonQuery(string sql, string[] param, object[] value, bool isStored)
+        public int LoaiDonExecuteNonQuery(string sql, string[] param, object[] value, bool isStored)
         {
             return provider.ExecuteNonQuery(sql, param, value, isStored);
         }
-        public int TableExecuteScalar(string data1, string[] data2, object[] data3)
+        public int LoaiDonExecuteScalar(string data1, string[] data2, object[] data3)
         {
             return provider.ExecuteScalar(data1, data2, data3);
         }

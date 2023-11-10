@@ -38,7 +38,7 @@ namespace QuanLyCafe.GUI
             InitializeComponent();
             OpenFromPage(new CLDUI.frmPageMain());
             this.ControlBox = false;
-            this.Text = String.Empty;
+            this.Text = $"Hệ Thống Quản Lý";
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)

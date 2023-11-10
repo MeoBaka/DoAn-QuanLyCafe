@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Bunifu.UI.WinForms.BunifuFormCaptionButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuFormCaptionButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuFormCaptionButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuFormCaptionButton.BorderEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnTop = new System.Windows.Forms.Panel();
             this.btn_CloseButton = new Bunifu.UI.WinForms.BunifuFormCaptionButton();
@@ -64,7 +64,7 @@
             this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTop.Location = new System.Drawing.Point(0, 0);
             this.pnTop.Name = "pnTop";
-            this.pnTop.Size = new System.Drawing.Size(1200, 40);
+            this.pnTop.Size = new System.Drawing.Size(1584, 40);
             this.pnTop.TabIndex = 0;
             this.pnTop.DoubleClick += new System.EventHandler(this.btn_MaxSize_Click);
             // 
@@ -90,11 +90,11 @@
             this.btn_CloseButton.ColorContrastOnClick = 30;
             this.btn_CloseButton.ColorContrastOnHover = 30;
             this.btn_CloseButton.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btn_CloseButton.CustomizableEdges = borderEdges3;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btn_CloseButton.CustomizableEdges = borderEdges1;
             this.btn_CloseButton.DefaultBorderColor = System.Drawing.Color.Empty;
             this.btn_CloseButton.DefaultColor = System.Drawing.Color.RoyalBlue;
             this.btn_CloseButton.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -118,7 +118,7 @@
             this.btn_MaxSize.AutoSize = true;
             this.btn_MaxSize.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_MaxSize.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_MaxSize.Location = new System.Drawing.Point(1128, 13);
+            this.btn_MaxSize.Location = new System.Drawing.Point(1512, 13);
             this.btn_MaxSize.Name = "btn_MaxSize";
             this.btn_MaxSize.Size = new System.Drawing.Size(27, 17);
             this.btn_MaxSize.TabIndex = 4;
@@ -131,7 +131,7 @@
             this.btn_MinSize.AutoSize = true;
             this.btn_MinSize.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_MinSize.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_MinSize.Location = new System.Drawing.Point(1095, 13);
+            this.btn_MinSize.Location = new System.Drawing.Point(1479, 13);
             this.btn_MinSize.Name = "btn_MinSize";
             this.btn_MinSize.Size = new System.Drawing.Size(18, 17);
             this.btn_MinSize.TabIndex = 3;
@@ -144,7 +144,7 @@
             this.btnClose.AutoSize = true;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnClose.Location = new System.Drawing.Point(1161, 13);
+            this.btnClose.Location = new System.Drawing.Point(1545, 13);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(27, 17);
             this.btnClose.TabIndex = 2;
@@ -270,14 +270,14 @@
             this.pnTakeForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnTakeForm.Location = new System.Drawing.Point(150, 40);
             this.pnTakeForm.Name = "pnTakeForm";
-            this.pnTakeForm.Size = new System.Drawing.Size(1050, 560);
+            this.pnTakeForm.Size = new System.Drawing.Size(1434, 560);
             this.pnTakeForm.TabIndex = 2;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 600);
+            this.ClientSize = new System.Drawing.Size(1584, 600);
             this.Controls.Add(this.pnTakeForm);
             this.Controls.Add(this.pnLeft);
             this.Controls.Add(this.pnTop);
