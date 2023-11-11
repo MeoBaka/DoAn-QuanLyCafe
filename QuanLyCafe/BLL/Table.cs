@@ -44,6 +44,7 @@ namespace QuanLyCafe.BLL
         }
 
 
+
         public int TableExecuteNonQuery(string sql, string[] param, object[] value, bool isStored)
         {
             return provider.ExecuteNonQuery(sql, param, value, isStored);

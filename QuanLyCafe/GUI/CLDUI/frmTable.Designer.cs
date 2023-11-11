@@ -47,6 +47,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.lbl_Select = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -167,7 +168,8 @@
             this.columnHeader4});
             this.lsvBill2.FullRowSelect = true;
             this.lsvBill2.GridLines = true;
-            this.lsvBill2.Location = new System.Drawing.Point(3, 186);
+            this.lsvBill2.HideSelection = false;
+            this.lsvBill2.Location = new System.Drawing.Point(3, 210);
             this.lsvBill2.Name = "lsvBill2";
             this.lsvBill2.Size = new System.Drawing.Size(404, 248);
             this.lsvBill2.TabIndex = 5;
@@ -197,7 +199,7 @@
             // 
             this.txt_ThanhToan.Enabled = false;
             this.txt_ThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txt_ThanhToan.Location = new System.Drawing.Point(3, 461);
+            this.txt_ThanhToan.Location = new System.Drawing.Point(3, 485);
             this.txt_ThanhToan.Name = "txt_ThanhToan";
             this.txt_ThanhToan.Size = new System.Drawing.Size(404, 26);
             this.txt_ThanhToan.TabIndex = 6;
@@ -209,7 +211,7 @@
             this.btnThanhToan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThanhToan.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThanhToan.Location = new System.Drawing.Point(166, 493);
+            this.btnThanhToan.Location = new System.Drawing.Point(166, 517);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(241, 35);
             this.btnThanhToan.TabIndex = 0;
@@ -221,7 +223,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(-1, 90);
+            this.label4.Location = new System.Drawing.Point(-1, 91);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 21);
             this.label4.TabIndex = 0;
@@ -247,6 +249,16 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Số Lượng:";
             // 
+            // lbl_Select
+            // 
+            this.lbl_Select.AutoSize = true;
+            this.lbl_Select.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Select.Location = new System.Drawing.Point(-1, 186);
+            this.lbl_Select.Name = "lbl_Select";
+            this.lbl_Select.Size = new System.Drawing.Size(96, 21);
+            this.lbl_Select.TabIndex = 0;
+            this.lbl_Select.Text = "Đang Chọn: ";
+            // 
             // frmTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,6 +275,7 @@
             this.Controls.Add(this.cbLoai);
             this.Controls.Add(this.flpTable);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.lbl_Select);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -298,5 +311,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_Select;
     }
 }

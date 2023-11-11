@@ -46,8 +46,8 @@
             this.drgLabelDrag = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.drgPanel = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.drgPnMerge = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.rzForm = new Guna.UI2.WinForms.Guna2ResizeForm(this.components);
             this.pnTakeForm = new System.Windows.Forms.Panel();
+            this.guna2ResizeForm1 = new Guna.UI2.WinForms.Guna2ResizeForm(this.components);
             this.pnTop.SuspendLayout();
             this.pnMerge.SuspendLayout();
             this.pnLeft.SuspendLayout();
@@ -64,7 +64,7 @@
             this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTop.Location = new System.Drawing.Point(0, 0);
             this.pnTop.Name = "pnTop";
-            this.pnTop.Size = new System.Drawing.Size(1584, 40);
+            this.pnTop.Size = new System.Drawing.Size(1387, 40);
             this.pnTop.TabIndex = 0;
             this.pnTop.DoubleClick += new System.EventHandler(this.btn_MaxSize_Click);
             // 
@@ -118,7 +118,7 @@
             this.btn_MaxSize.AutoSize = true;
             this.btn_MaxSize.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_MaxSize.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_MaxSize.Location = new System.Drawing.Point(1512, 13);
+            this.btn_MaxSize.Location = new System.Drawing.Point(1315, 13);
             this.btn_MaxSize.Name = "btn_MaxSize";
             this.btn_MaxSize.Size = new System.Drawing.Size(27, 17);
             this.btn_MaxSize.TabIndex = 4;
@@ -131,7 +131,7 @@
             this.btn_MinSize.AutoSize = true;
             this.btn_MinSize.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_MinSize.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_MinSize.Location = new System.Drawing.Point(1479, 13);
+            this.btn_MinSize.Location = new System.Drawing.Point(1282, 13);
             this.btn_MinSize.Name = "btn_MinSize";
             this.btn_MinSize.Size = new System.Drawing.Size(18, 17);
             this.btn_MinSize.TabIndex = 3;
@@ -144,7 +144,7 @@
             this.btnClose.AutoSize = true;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnClose.Location = new System.Drawing.Point(1545, 13);
+            this.btnClose.Location = new System.Drawing.Point(1348, 13);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(27, 17);
             this.btnClose.TabIndex = 2;
@@ -181,7 +181,7 @@
             this.pnLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnLeft.Location = new System.Drawing.Point(0, 40);
             this.pnLeft.Name = "pnLeft";
-            this.pnLeft.Size = new System.Drawing.Size(150, 560);
+            this.pnLeft.Size = new System.Drawing.Size(150, 595);
             this.pnLeft.TabIndex = 1;
             // 
             // btnLogOut
@@ -191,7 +191,7 @@
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.ForeColor = System.Drawing.Color.Yellow;
-            this.btnLogOut.Location = new System.Drawing.Point(3, 518);
+            this.btnLogOut.Location = new System.Drawing.Point(3, 553);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(151, 39);
             this.btnLogOut.TabIndex = 0;
@@ -260,24 +260,24 @@
             this.drgPnMerge.TargetControl = this.pnMerge;
             this.drgPnMerge.UseTransparentDrag = true;
             // 
-            // rzForm
-            // 
-            this.rzForm.TargetForm = this;
-            // 
             // pnTakeForm
             // 
             this.pnTakeForm.BackColor = System.Drawing.Color.White;
             this.pnTakeForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnTakeForm.Location = new System.Drawing.Point(150, 40);
             this.pnTakeForm.Name = "pnTakeForm";
-            this.pnTakeForm.Size = new System.Drawing.Size(1434, 560);
+            this.pnTakeForm.Size = new System.Drawing.Size(1237, 595);
             this.pnTakeForm.TabIndex = 2;
+            // 
+            // guna2ResizeForm1
+            // 
+            this.guna2ResizeForm1.TargetForm = this;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1584, 600);
+            this.ClientSize = new System.Drawing.Size(1387, 635);
             this.Controls.Add(this.pnTakeForm);
             this.Controls.Add(this.pnLeft);
             this.Controls.Add(this.pnTop);
@@ -309,8 +309,8 @@
         private System.Windows.Forms.Label btn_MaxSize;
         private System.Windows.Forms.Label btn_MinSize;
         private System.Windows.Forms.Label btnClose;
-        private Guna.UI2.WinForms.Guna2ResizeForm rzForm;
         private System.Windows.Forms.Panel pnTakeForm;
         private Bunifu.UI.WinForms.BunifuFormCaptionButton btn_CloseButton;
+        private Guna.UI2.WinForms.Guna2ResizeForm guna2ResizeForm1;
     }
 }

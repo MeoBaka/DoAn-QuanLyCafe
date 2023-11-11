@@ -12,11 +12,12 @@ using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
+
 namespace QuanLyCafe.GUI.CLDUI
 {
     public partial class frmTable : Form
     {
-        
+        LoaiDon loaidon;
         public frmTable()
         {
             InitializeComponent();
@@ -36,11 +37,31 @@ namespace QuanLyCafe.GUI.CLDUI
 
                 AddTable(tableName, status); // Gọi lại hàm AddTable với thông tin từ cơ sở dữ liệu
             }
-
             table.DisConnect(); // Đảm bảo đóng kết nối sau khi hoàn thành công việc
         }
+        public void ReloadFlpTable()
+        {
+            Table table = new Table();
+            table.Connect(); // Thiết lập kết nối
 
+            DataTable tableData = table.GetDataTable(); // Lấy dữ liệu từ cơ sở dữ liệu
 
+            // Xoá toàn bộ button trên flpTable
+            flpTable.Controls.Clear();
+
+            foreach (DataRow row in tableData.Rows)
+            {
+                string tableName = row["NAME"].ToString(); // Lấy tên bàn từ cột NAME
+                string status = row["STATUS"].ToString(); // Lấy trạng thái từ cột STATUS
+
+                AddTable(tableName, status); // Gọi lại hàm AddTable với thông tin từ cơ sở dữ liệu
+                string tenBan = selectedButton.Text;
+                int index = tenBan.IndexOf("\n");
+                tenBan = tenBan.Substring(0, index);
+                lbl_Select.Text = "Đang Chọn: "+tenBan;
+            }
+            table.DisConnect(); // Đảm bảo đóng kết nối sau khi hoàn thành công việc
+        }
 
 
         Button selectedButton = null;
@@ -48,7 +69,7 @@ namespace QuanLyCafe.GUI.CLDUI
         void AddTable(string tableName, string status)
         {
             Button newButton = new Button();
-            newButton.Text = tableName + (status.ToLower() == "trống" ? "\nTrống" : ""); // Sử dụng tên bàn và trạng thái được truyền vào
+            newButton.Text = tableName + (status.ToLower() == "trống" ? "\nTrống" : "\nĐang Dùng"); // Sử dụng tên bàn và trạng thái được truyền vào
             newButton.Size = new Size(90, 90);
             newButton.FlatStyle = FlatStyle.Flat;
 
@@ -82,6 +103,10 @@ namespace QuanLyCafe.GUI.CLDUI
 
                 // Thêm " (Đang Chọn)" vào tên nút đang chọn
                 selectedButton.Text += " (Đang Chọn)";
+                string tenBan = selectedButton.Text;
+                int index = tenBan.IndexOf("\n");
+                tenBan = tenBan.Substring(0, index);
+                lbl_Select.Text = "Đang Chọn: " + tenBan;
                 UpdateListView();
                 CalculateTotalBill();
             };
@@ -89,20 +114,6 @@ namespace QuanLyCafe.GUI.CLDUI
             flpTable.Controls.Add(newButton);
             
         }
-
-        void UpdateThanhToan()
-        {
-            decimal total = 0;
-
-            foreach (ListViewItem item in lsvBill2.Items)
-            {
-                decimal thanhTien = decimal.Parse(item.SubItems[3].Text.Replace(",", "")); // Loại bỏ dấu phẩy ngăn cách hàng nghìn khi chuyển đổi
-                total += thanhTien;
-            }
-
-            txt_ThanhToan.Text = total.ToString("N0"); // Định dạng giá trị thành số có dấu phẩy ngăn cách hàng nghìn
-        }
-
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
             // Lấy thông tin từ ListView và tổng tiền
@@ -128,15 +139,33 @@ namespace QuanLyCafe.GUI.CLDUI
 
             // Xoá toàn bộ dữ liệu trong ListView và cập nhật txt_ThanhToan
             lsvBill2.Items.Clear();
+            BILL bILL = new BILL();
+            string tenBan = selectedButton.Text;
+            int index = tenBan.IndexOf("\n");
+            tenBan = tenBan.Substring(0, index);
+            if (bILL.Connect())
+            {
+                int rec = UpdateBill(bILL, tenBan);
+            }
+            Table table = new Table(); ;
+            if (table.Connect())
+            {
+                int rec = UpdateTable(table, "Trống", tenBan);
+            }
             txt_ThanhToan.Text = "0"; // Đặt lại giá trị tổng tiền thành 0
+            ReloadFlpTable();
         }
-
-
+        private int UpdateBill(BILL bll,string tenban)
+        {
+            string sql = "DELETE FROM M3_LOGDON WHERE NAME=@tenban";
+            string[] param = { "@tenban" };
+            object[] value = { tenban };
+            return bll.TableExecuteNonQuery(sql,param,value,false);
+        }
         private void frmTable_Load(object sender, EventArgs e)
         {
             LoadLoaiIDon();
         }
-        LoaiDon loaidon;
         void LoadLoaiIDon()
         {
             ComboBox cmb;
@@ -183,14 +212,12 @@ namespace QuanLyCafe.GUI.CLDUI
                 loaidon.DisConnect();
             }
         }
-
         // Gọi hàm LoadDon khi có sự kiện thay đổi trong ComboBox cbLoai
         private void cbLoai_SelectedIndexChanged(object sender, EventArgs e)
         {
             string loaiDuocChon = cbLoai.Text; // Lấy giá trị đã chọn
             LoadDon(loaiDuocChon);
         }
-
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             if(numericUpDown1.Value < 1)
@@ -199,7 +226,6 @@ namespace QuanLyCafe.GUI.CLDUI
                 numericUpDown1.Value = 1;
             }
         }
-
         private void btnAddBill_Click(object sender, EventArgs e)
         {
             // Kiểm tra xem đã chọn bàn chưa
@@ -254,11 +280,23 @@ namespace QuanLyCafe.GUI.CLDUI
                 {
                     int rec = UpdateBill(bILL, tenBan, ten, soLuong, thanhTien, giatri);
                 }
-
+                Table table = new Table(); ;
+                if (table.Connect())
+                {
+                    int rec = UpdateTable(table, "Đang Dùng", tenBan);
+                }
                 // Cập nhật ListView và TextBox
                 UpdateListView();
                 CalculateTotalBill();
+                ReloadFlpTable();
             }
+        }
+        private int UpdateTable(Table table, string status, string tenban)
+        {
+            string queryupdatelogdon = "UPDATE M3_TABLE SET STATUS=@status WHERE NAME=@tenban";
+            string[] param = { "@status", "@tenban" };
+            object[] value = { status, tenban };
+            return table.TableExecuteNonQuery(queryupdatelogdon, param, value, false);
         }
         private int UpdateBill(BILL bll,string tenBan,string ten, int soLuong, decimal thanhTien, string giatri)
         {
@@ -267,33 +305,6 @@ namespace QuanLyCafe.GUI.CLDUI
             object[] values = { tenBan, ten, giatri, soLuong, thanhTien};
             return bll.TableExecuteNonQuery(queryInsertLogDon, para, values, false);
         }
-
-        private void LoadDo22n(string loaiDuocChon)
-        {
-            loaidon = new LoaiDon();
-            if (loaidon.Connect())
-            {
-                DataTable data = loaidon.NhanCDDon(loaiDuocChon);
-
-                // Tạo danh sách các mục định dạng theo yêu cầu
-                List<string> donItems = new List<string>();
-
-                foreach (DataRow row in data.Rows)
-                {
-                    string giatri = row["GIATIEN"].ToString();
-                    string size = row["MSIZE"].ToString();
-                    string ten = row["TENDON"].ToString();
-                    string donItem = $"{giatri,-7}| {size,-6}| {ten}";
-                    donItems.Add(donItem);
-                }
-
-                // Gán danh sách các mục định dạng cho ComboBox cbDon
-                cbDon.DataSource = donItems;
-
-                loaidon.DisConnect();
-            }
-        }
-
         private void UpdateListView()
         {
             // Kiểm tra xem đã chọn bàn chưa
@@ -325,9 +336,7 @@ namespace QuanLyCafe.GUI.CLDUI
                 // Tạo danh sách các mục định dạng theo yêu cầu
                 List<string> donItems = new List<string>();
 
-                lsvBill2.Items.Clear(); // Xóa tất cả các mục trong ListView trước khi cập nhật
-
-                decimal totalBill = 0; // Tổng thành tiền của bàn đang chọn
+                lsvBill2.Items.Clear(); // Xóa tất cả các mục trong ListView trước khi cập nhật 
 
                 foreach (DataRow row in data.Rows)
                 {
@@ -353,7 +362,6 @@ namespace QuanLyCafe.GUI.CLDUI
             // Duyệt qua các dòng dữ liệu từ bảng M3_LOGDON và thêm vào ListView và tính tổng thành tiền
 
         }
-
         private void CalculateTotalBill()
         {
             decimal totalBill = 0;
@@ -373,7 +381,6 @@ namespace QuanLyCafe.GUI.CLDUI
             // Hiển thị tổng thành tiền trong txt_ThanhToan
             txt_ThanhToan.Text = totalBill.ToString("#,###vnđ");
         }
-
         private int XoaDonHang(Table tl, string tenBan, string tenmon, string donggia, decimal soluong, decimal thanhtien)
         {
             string sql = "DELETE FROM M3_LOGDON WHERE NAME=@tenban AND TENMON=@tenmon AND DONGIA=@dongia AND SOLUONG=@soluong AND THANHTIEN=@thanhTien";
@@ -420,6 +427,5 @@ namespace QuanLyCafe.GUI.CLDUI
                 }
             }
         }
-
     }
 }
