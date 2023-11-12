@@ -153,7 +153,9 @@ namespace QuanLyCafe.GUI.CLDUI
                 int rec = UpdateTable(table, "Trống", tenBan);
             }
             txt_ThanhToan.Text = "0"; // Đặt lại giá trị tổng tiền thành 0
+
             ReloadFlpTable();
+            lbl_Select.Text = "Vừa Chọn: "+tenBan;
         }
         private int UpdateBill(BILL bll,string tenban)
         {
