@@ -118,5 +118,12 @@ namespace QuanLyCafe.GUI
             OpenFromPage(new CLDUI.frmPageMain());
             btn_CloseButton.Visible = false;
         }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            BtnStatus = btnTable.Text;
+            btn_CloseButton.Visible = true;
+            OpenFromPage(new CLDUI.frmQuanLy());
+        }
     }
 }

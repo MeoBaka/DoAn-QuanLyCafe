@@ -37,9 +37,9 @@
             this.lbl_1.Font = new System.Drawing.Font("Mistral", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_1.Location = new System.Drawing.Point(58, 60);
             this.lbl_1.Name = "lbl_1";
-            this.lbl_1.Size = new System.Drawing.Size(361, 57);
+            this.lbl_1.Size = new System.Drawing.Size(504, 57);
             this.lbl_1.TabIndex = 1;
-            this.lbl_1.Text = "Project: Cafe Manager";
+            this.lbl_1.Text = "Đồ Án: Quản Lý Quán Cà Phê";
             // 
             // frmPageMain
             // 

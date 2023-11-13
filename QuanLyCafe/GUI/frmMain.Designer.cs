@@ -224,6 +224,7 @@
             this.btnAdmin.TabIndex = 0;
             this.btnAdmin.Text = "Admin";
             this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // btnTable
             // 
