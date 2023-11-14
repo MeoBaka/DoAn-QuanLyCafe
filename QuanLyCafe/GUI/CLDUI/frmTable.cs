@@ -282,6 +282,10 @@ namespace QuanLyCafe.GUI.CLDUI
                 {
                     int rec = UpdateBill(bILL, tenBan, ten, soLuong, thanhTien, giatri);
                 }
+                if (bILL.Connect())
+                {
+                    int rec = UpdateDoanhThu(bILL, tenBan, ten, soLuong, thanhTien, giatri);
+                }
                 Table table = new Table(); ;
                 if (table.Connect())
                 {
@@ -302,11 +306,19 @@ namespace QuanLyCafe.GUI.CLDUI
         }
         private int UpdateBill(BILL bll,string tenBan,string ten, int soLuong, decimal thanhTien, string giatri)
         {
-            string queryInsertLogDon = "INSERT INTO M3_LOGDON (NAME, TENMON, DONGIA, SOLUONG, THANHTIEN) VALUES (@TenBan, @TenMon, @dongia, @SoLuong, @ThanhTien)";
-            string[] para = { "@TenBan", "@TenMon", "@dongia", "@SoLuong", "@ThanhTien" };
-            object[] values = { tenBan, ten, giatri, soLuong, thanhTien};
+            string queryInsertLogDon = "INSERT INTO M3_LOGDON (NAME, TENMON, DONGIA, SOLUONG, THANHTIEN, TIME) VALUES (@TenBan, @TenMon, @dongia, @SoLuong, @ThanhTien, @thoigian)";
+            string[] para = { "@TenBan", "@TenMon", "@dongia", "@SoLuong", "@ThanhTien", "@thoigian" };
+            object[] values = { tenBan, ten, giatri, soLuong, thanhTien, DateTime.Now };
             return bll.TableExecuteNonQuery(queryInsertLogDon, para, values, false);
         }
+        private int UpdateDoanhThu(BILL bll,string tenBan,string ten, int soLuong, decimal thanhTien, string giatri)
+        {
+            string queryInsertLogDon = "INSERT INTO M3_DOANHTHU (NAME, TENMON, DONGIA, SOLUONG, THANHTIEN, TIME) VALUES (@TenBan, @TenMon, @dongia, @SoLuong, @ThanhTien, @thoigian)";
+            string[] para = { "@TenBan", "@TenMon", "@dongia", "@SoLuong", "@ThanhTien", "@thoigian" };
+            object[] values = { tenBan, ten, giatri, soLuong, thanhTien, DateTime.Now };
+            return bll.TableExecuteNonQuery(queryInsertLogDon, para, values, false);
+        }
+
         private void UpdateListView()
         {
             // Kiểm tra xem đã chọn bàn chưa

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Bunifu.UI.WinForms.BunifuFormCaptionButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuFormCaptionButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuFormCaptionButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuFormCaptionButton.BorderEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnTop = new System.Windows.Forms.Panel();
             this.btn_CloseButton = new Bunifu.UI.WinForms.BunifuFormCaptionButton();
@@ -90,11 +90,11 @@
             this.btn_CloseButton.ColorContrastOnClick = 30;
             this.btn_CloseButton.ColorContrastOnHover = 30;
             this.btn_CloseButton.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btn_CloseButton.CustomizableEdges = borderEdges1;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.btn_CloseButton.CustomizableEdges = borderEdges6;
             this.btn_CloseButton.DefaultBorderColor = System.Drawing.Color.Empty;
             this.btn_CloseButton.DefaultColor = System.Drawing.Color.RoyalBlue;
             this.btn_CloseButton.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -205,7 +205,7 @@
             this.btnThongTin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThongTin.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThongTin.ForeColor = System.Drawing.Color.White;
-            this.btnThongTin.Location = new System.Drawing.Point(3, 96);
+            this.btnThongTin.Location = new System.Drawing.Point(0, 96);
             this.btnThongTin.Name = "btnThongTin";
             this.btnThongTin.Size = new System.Drawing.Size(151, 39);
             this.btnThongTin.TabIndex = 0;
@@ -218,11 +218,11 @@
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdmin.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmin.ForeColor = System.Drawing.Color.White;
-            this.btnAdmin.Location = new System.Drawing.Point(3, 51);
+            this.btnAdmin.Location = new System.Drawing.Point(0, 51);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(151, 39);
             this.btnAdmin.TabIndex = 0;
-            this.btnAdmin.Text = "Admin";
+            this.btnAdmin.Text = "Quản Lý";
             this.btnAdmin.UseVisualStyleBackColor = true;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
@@ -232,7 +232,7 @@
             this.btnTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTable.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTable.ForeColor = System.Drawing.Color.White;
-            this.btnTable.Location = new System.Drawing.Point(3, 6);
+            this.btnTable.Location = new System.Drawing.Point(0, 6);
             this.btnTable.Name = "btnTable";
             this.btnTable.Size = new System.Drawing.Size(151, 39);
             this.btnTable.TabIndex = 0;
@@ -284,6 +284,7 @@
             this.Controls.Add(this.pnTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMain";
             this.pnTop.ResumeLayout(false);
             this.pnTop.PerformLayout();
