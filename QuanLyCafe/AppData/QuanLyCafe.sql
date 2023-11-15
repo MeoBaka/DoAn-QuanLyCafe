@@ -40,6 +40,7 @@ CREATE TABLE M3_DON(
 	MSIZE NVARCHAR(100),
 	GIATIEN MONEY
 )
+select * from M3_DON
 INSERT INTO M3_DON VALUES
 ('1', N'CÀ PHÊ', N'CÀ PHÊ SỮA ĐÁ', N'NHỎ', 29000),
 ('2', N'CÀ PHÊ', N'CÀ PHÊ SỮA ĐÁ', N'VỪA', 35000),

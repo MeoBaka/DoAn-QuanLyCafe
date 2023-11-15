@@ -36,7 +36,7 @@ namespace QuanLyCafe.BLL
         public DataTable GetlSVDon(string tenban)
         {
             DataTable table = new DataTable();
-            string strsql = $"SELECT TENMON, DONGIA, SOLUONG, THANHTIEN FROM M3_LOGDON WHERE NAME = '{tenban}'";
+            string strsql = $"SELECT TENMON, DONGIA, SOLUONG, THANHTIEN, ID FROM M3_LOGDON WHERE NAME = '{tenban}'";
             SqlCommand Cmd = new SqlCommand(strsql, Connection());
             SqlDataAdapter adapter = new SqlDataAdapter(Cmd);
             adapter.Fill(table);

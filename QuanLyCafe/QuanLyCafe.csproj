@@ -94,7 +94,9 @@
     <Compile Include="BLL\DoanhThu.cs" />
     <Compile Include="BLL\LoaiDon.cs" />
     <Compile Include="BLL\Table.cs" />
+    <Compile Include="BLL\ThucAn.cs" />
     <Compile Include="BLL\User.cs" />
+    <Compile Include="Controls\FormChild.cs" />
     <Compile Include="Controls\RJTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -102,6 +104,12 @@
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\Provider.cs" />
+    <Compile Include="GUI\CLDUI\frmDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CLDUI\frmDoanhThu.Designer.cs">
+      <DependentUpon>frmDoanhThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\CLDUI\frmPageMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +128,12 @@
     <Compile Include="GUI\CLDUI\frmTable.Designer.cs">
       <DependentUpon>frmTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\CLDUI\frmThucAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CLDUI\frmThucAn.Designer.cs">
+      <DependentUpon>frmThucAn.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +151,9 @@
     <EmbeddedResource Include="Controls\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CLDUI\frmDoanhThu.resx">
+      <DependentUpon>frmDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\CLDUI\frmPageMain.resx">
       <DependentUpon>frmPageMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\CLDUI\frmTable.resx">
       <DependentUpon>frmTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CLDUI\frmThucAn.resx">
+      <DependentUpon>frmThucAn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

@@ -358,12 +358,14 @@ namespace QuanLyCafe.GUI.CLDUI
                     decimal donGia = decimal.Parse(row["DONGIA"].ToString());
                     int soLuong = (int)row["SOLUONG"];
                     decimal thanhTien = decimal.Parse(row["THANHTIEN"].ToString());
+                    int id = int.Parse(row["ID"].ToString());
 
                     // Thêm thông tin món vào ListView
                     ListViewItem item = new ListViewItem(tenMon);
                     item.SubItems.Add(soLuong.ToString());
                     item.SubItems.Add(donGia.ToString("#,###vnđ"));
                     item.SubItems.Add(thanhTien.ToString("#,###vnđ"));
+                    item.SubItems.Add(id.ToString());
                     lsvBill2.Items.Add(item);
 
                     // Cộng dồn vào tổng thành tiền
@@ -395,15 +397,20 @@ namespace QuanLyCafe.GUI.CLDUI
             // Hiển thị tổng thành tiền trong txt_ThanhToan
             txt_ThanhToan.Text = totalBill.ToString("#,###vnđ");
         }
-        private int XoaDonHang(Table tl, string tenBan, string tenmon, string donggia, decimal soluong, decimal thanhtien)
+        private int XoaDonHang(Table tl, int id)
         {
-            string sql = "DELETE FROM M3_LOGDON WHERE NAME=@tenban AND TENMON=@tenmon AND DONGIA=@dongia AND SOLUONG=@soluong AND THANHTIEN=@thanhTien";
-            string[] param = { "@tenban", "@tenmon" , "@dongia", "@soluong", "@thanhTien" };
-            object[] value = { tenBan , tenmon, donggia, soluong, thanhtien};
+            string sql = "DELETE FROM M3_LOGDON WHERE ID=@id";
+            string[] param = { "@id"};
+            object[] value = { id };
             return tl.TableExecuteNonQuery(sql, param, value, false);
         }
         private void btnHuyBill_Click(object sender, EventArgs e)
         {
+            if(selectedButton == null)
+            {
+                MessageBox.Show("Vui lòng chọn 1 đơn để huỷ","Thông báo");
+                return;
+            }
             Table table = new Table();
             string tenBan = selectedButton.Text;
             int index = tenBan.IndexOf("\n");
@@ -418,6 +425,7 @@ namespace QuanLyCafe.GUI.CLDUI
                 string col2 = selectedItem.SubItems[1].Text;
                 string col3 = selectedItem.SubItems[2].Text;
                 string col4 = selectedItem.SubItems[3].Text;
+                string col5 = selectedItem.SubItems[4].Text;
 
                 // Loại bỏ dấu phẩy và chuyển đổi thành số thực
                 decimal col3Value = decimal.Parse(col3.Replace(",", "").Replace("vnđ", ""));
@@ -430,7 +438,7 @@ namespace QuanLyCafe.GUI.CLDUI
                 // Hiển thị thông tin cột được chọn trong MessageBox
                 if (table.Connect())
                 {
-                    int rec = XoaDonHang(table, tenBan, col1, col2, col3Value, col4Value);
+                    int rec = XoaDonHang(table, int.Parse(col5));
                     Console.WriteLine(rec);
                     if (rec > 0)
                     {

@@ -49,6 +49,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_Select = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,7 +167,8 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4});
+            this.columnHeader4,
+            this.columnHeader5});
             this.lsvBill2.FullRowSelect = true;
             this.lsvBill2.GridLines = true;
             this.lsvBill2.HideSelection = false;
@@ -270,6 +272,10 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Tổng Tiền: ";
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "ID";
+            // 
             // frmTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,5 +331,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbl_Select;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }
