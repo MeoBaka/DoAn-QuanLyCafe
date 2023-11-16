@@ -82,7 +82,7 @@
             this.tcQuanLy.Location = new System.Drawing.Point(0, 0);
             this.tcQuanLy.Name = "tcQuanLy";
             this.tcQuanLy.SelectedIndex = 0;
-            this.tcQuanLy.Size = new System.Drawing.Size(1178, 575);
+            this.tcQuanLy.Size = new System.Drawing.Size(1181, 574);
             this.tcQuanLy.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.tcQuanLy.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
             this.tcQuanLy.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -329,7 +329,7 @@
             this.taikhoan.Controls.Add(this.btn_acc_them);
             this.taikhoan.Location = new System.Drawing.Point(184, 4);
             this.taikhoan.Name = "taikhoan";
-            this.taikhoan.Size = new System.Drawing.Size(990, 567);
+            this.taikhoan.Size = new System.Drawing.Size(993, 566);
             this.taikhoan.TabIndex = 4;
             this.taikhoan.Text = "Tài khoản";
             this.taikhoan.UseVisualStyleBackColor = true;
@@ -396,7 +396,7 @@
             this.dgvTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTaiKhoan.Location = new System.Drawing.Point(6, 136);
             this.dgvTaiKhoan.Name = "dgvTaiKhoan";
-            this.dgvTaiKhoan.Size = new System.Drawing.Size(979, 407);
+            this.dgvTaiKhoan.Size = new System.Drawing.Size(982, 406);
             this.dgvTaiKhoan.TabIndex = 40;
             // 
             // btn_acc_luu
@@ -408,7 +408,7 @@
             this.btn_acc_luu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_acc_luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_acc_luu.ForeColor = System.Drawing.Color.Blue;
-            this.btn_acc_luu.Location = new System.Drawing.Point(758, 550);
+            this.btn_acc_luu.Location = new System.Drawing.Point(758, 549);
             this.btn_acc_luu.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btn_acc_luu.Name = "btn_acc_luu";
             this.btn_acc_luu.Size = new System.Drawing.Size(139, 46);
@@ -425,7 +425,7 @@
             this.btn_acc_sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_acc_sua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_acc_sua.ForeColor = System.Drawing.Color.Olive;
-            this.btn_acc_sua.Location = new System.Drawing.Point(586, 550);
+            this.btn_acc_sua.Location = new System.Drawing.Point(586, 549);
             this.btn_acc_sua.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btn_acc_sua.Name = "btn_acc_sua";
             this.btn_acc_sua.Size = new System.Drawing.Size(139, 46);
@@ -442,7 +442,7 @@
             this.btn_acc_xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_acc_xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_acc_xoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btn_acc_xoa.Location = new System.Drawing.Point(414, 550);
+            this.btn_acc_xoa.Location = new System.Drawing.Point(414, 549);
             this.btn_acc_xoa.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btn_acc_xoa.Name = "btn_acc_xoa";
             this.btn_acc_xoa.Size = new System.Drawing.Size(139, 46);
@@ -459,7 +459,7 @@
             this.btn_Doipass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Doipass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Doipass.ForeColor = System.Drawing.Color.Green;
-            this.btn_Doipass.Location = new System.Drawing.Point(94, 550);
+            this.btn_Doipass.Location = new System.Drawing.Point(94, 549);
             this.btn_Doipass.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btn_Doipass.Name = "btn_Doipass";
             this.btn_Doipass.Size = new System.Drawing.Size(139, 46);
@@ -476,7 +476,7 @@
             this.btn_acc_them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_acc_them.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_acc_them.ForeColor = System.Drawing.Color.Green;
-            this.btn_acc_them.Location = new System.Drawing.Point(243, 550);
+            this.btn_acc_them.Location = new System.Drawing.Point(243, 549);
             this.btn_acc_them.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btn_acc_them.Name = "btn_acc_them";
             this.btn_acc_them.Size = new System.Drawing.Size(139, 46);
@@ -488,7 +488,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1178, 575);
+            this.ClientSize = new System.Drawing.Size(1181, 574);
             this.Controls.Add(this.tcQuanLy);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmQuanLy";
