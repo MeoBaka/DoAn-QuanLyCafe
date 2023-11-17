@@ -93,6 +93,7 @@
     <Compile Include="BLL\BILL.cs" />
     <Compile Include="BLL\DoanhThu.cs" />
     <Compile Include="BLL\LoaiDon.cs" />
+    <Compile Include="BLL\QuanLyBanAn.cs" />
     <Compile Include="BLL\Table.cs" />
     <Compile Include="BLL\ThucAn.cs" />
     <Compile Include="BLL\User.cs" />
@@ -116,11 +117,23 @@
     <Compile Include="GUI\CLDUI\frmPageMain.Designer.cs">
       <DependentUpon>frmPageMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\CLDUI\frmQLBanAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CLDUI\frmQLBanAn.Designer.cs">
+      <DependentUpon>frmQLBanAn.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\CLDUI\frmQuanLy.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\CLDUI\frmQuanLy.Designer.cs">
       <DependentUpon>frmQuanLy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CLDUI\frmDanhMuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CLDUI\frmDanhMuc.Designer.cs">
+      <DependentUpon>frmDanhMuc.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\CLDUI\frmTable.cs">
       <SubType>Form</SubType>
@@ -157,8 +170,14 @@
     <EmbeddedResource Include="GUI\CLDUI\frmPageMain.resx">
       <DependentUpon>frmPageMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CLDUI\frmQLBanAn.resx">
+      <DependentUpon>frmQLBanAn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\CLDUI\frmQuanLy.resx">
       <DependentUpon>frmQuanLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CLDUI\frmDanhMuc.resx">
+      <DependentUpon>frmDanhMuc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\CLDUI\frmTable.resx">
       <DependentUpon>frmTable.cs</DependentUpon>

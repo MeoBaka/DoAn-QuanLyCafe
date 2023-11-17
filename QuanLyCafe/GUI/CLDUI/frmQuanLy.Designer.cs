@@ -36,17 +36,6 @@
             this.pnThucAn = new System.Windows.Forms.Panel();
             this.danhmuc = new System.Windows.Forms.TabPage();
             this.banan = new System.Windows.Forms.TabPage();
-            this.txt_trangthai = new System.Windows.Forms.TextBox();
-            this.txt_tenban = new System.Windows.Forms.TextBox();
-            this.txt_table_id = new System.Windows.Forms.TextBox();
-            this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.dgvTable = new System.Windows.Forms.DataGridView();
-            this.btn_table_luu = new System.Windows.Forms.Button();
-            this.btn_table_sua = new System.Windows.Forms.Button();
-            this.btn_table_xoa = new System.Windows.Forms.Button();
-            this.btn_table_them = new System.Windows.Forms.Button();
             this.taikhoan = new System.Windows.Forms.TabPage();
             this.txt_acc_loai = new System.Windows.Forms.TextBox();
             this.txt_acc_ten = new System.Windows.Forms.TextBox();
@@ -60,11 +49,13 @@
             this.btn_acc_xoa = new System.Windows.Forms.Button();
             this.btn_Doipass = new System.Windows.Forms.Button();
             this.btn_acc_them = new System.Windows.Forms.Button();
+            this.pnBanAn = new System.Windows.Forms.Panel();
+            this.pnDanhMuc = new System.Windows.Forms.Panel();
             this.tcQuanLy.SuspendLayout();
             this.doanhthu.SuspendLayout();
             this.thucan.SuspendLayout();
+            this.danhmuc.SuspendLayout();
             this.banan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).BeginInit();
             this.taikhoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).BeginInit();
             this.SuspendLayout();
@@ -110,7 +101,7 @@
             this.doanhthu.Location = new System.Drawing.Point(184, 4);
             this.doanhthu.Name = "doanhthu";
             this.doanhthu.Padding = new System.Windows.Forms.Padding(3);
-            this.doanhthu.Size = new System.Drawing.Size(990, 567);
+            this.doanhthu.Size = new System.Drawing.Size(993, 566);
             this.doanhthu.TabIndex = 0;
             this.doanhthu.Text = "Doanh Thu";
             this.doanhthu.UseVisualStyleBackColor = true;
@@ -120,7 +111,7 @@
             this.pnDoanhThu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnDoanhThu.Location = new System.Drawing.Point(3, 3);
             this.pnDoanhThu.Name = "pnDoanhThu";
-            this.pnDoanhThu.Size = new System.Drawing.Size(984, 561);
+            this.pnDoanhThu.Size = new System.Drawing.Size(987, 560);
             this.pnDoanhThu.TabIndex = 3;
             // 
             // txt_TongDoanhThu
@@ -138,7 +129,7 @@
             this.thucan.Controls.Add(this.pnThucAn);
             this.thucan.Location = new System.Drawing.Point(184, 4);
             this.thucan.Name = "thucan";
-            this.thucan.Size = new System.Drawing.Size(990, 567);
+            this.thucan.Size = new System.Drawing.Size(993, 566);
             this.thucan.TabIndex = 1;
             this.thucan.Text = "Thức Ăn";
             this.thucan.UseVisualStyleBackColor = true;
@@ -148,170 +139,28 @@
             this.pnThucAn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnThucAn.Location = new System.Drawing.Point(0, 0);
             this.pnThucAn.Name = "pnThucAn";
-            this.pnThucAn.Size = new System.Drawing.Size(990, 567);
+            this.pnThucAn.Size = new System.Drawing.Size(993, 566);
             this.pnThucAn.TabIndex = 0;
             // 
             // danhmuc
             // 
+            this.danhmuc.Controls.Add(this.pnDanhMuc);
             this.danhmuc.Location = new System.Drawing.Point(184, 4);
             this.danhmuc.Name = "danhmuc";
-            this.danhmuc.Size = new System.Drawing.Size(990, 567);
+            this.danhmuc.Size = new System.Drawing.Size(993, 566);
             this.danhmuc.TabIndex = 2;
             this.danhmuc.Text = "Danh Mục";
             this.danhmuc.UseVisualStyleBackColor = true;
             // 
             // banan
             // 
-            this.banan.Controls.Add(this.txt_trangthai);
-            this.banan.Controls.Add(this.txt_tenban);
-            this.banan.Controls.Add(this.txt_table_id);
-            this.banan.Controls.Add(this.guna2HtmlLabel11);
-            this.banan.Controls.Add(this.guna2HtmlLabel12);
-            this.banan.Controls.Add(this.guna2HtmlLabel13);
-            this.banan.Controls.Add(this.dgvTable);
-            this.banan.Controls.Add(this.btn_table_luu);
-            this.banan.Controls.Add(this.btn_table_sua);
-            this.banan.Controls.Add(this.btn_table_xoa);
-            this.banan.Controls.Add(this.btn_table_them);
+            this.banan.Controls.Add(this.pnBanAn);
             this.banan.Location = new System.Drawing.Point(184, 4);
             this.banan.Name = "banan";
-            this.banan.Size = new System.Drawing.Size(990, 567);
+            this.banan.Size = new System.Drawing.Size(993, 566);
             this.banan.TabIndex = 3;
             this.banan.Text = "Bàn Ăn";
             this.banan.UseVisualStyleBackColor = true;
-            // 
-            // txt_trangthai
-            // 
-            this.txt_trangthai.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
-            this.txt_trangthai.Location = new System.Drawing.Point(132, 85);
-            this.txt_trangthai.Name = "txt_trangthai";
-            this.txt_trangthai.Size = new System.Drawing.Size(850, 29);
-            this.txt_trangthai.TabIndex = 33;
-            // 
-            // txt_tenban
-            // 
-            this.txt_tenban.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
-            this.txt_tenban.Location = new System.Drawing.Point(131, 45);
-            this.txt_tenban.Name = "txt_tenban";
-            this.txt_tenban.Size = new System.Drawing.Size(850, 29);
-            this.txt_tenban.TabIndex = 34;
-            // 
-            // txt_table_id
-            // 
-            this.txt_table_id.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
-            this.txt_table_id.Location = new System.Drawing.Point(131, 8);
-            this.txt_table_id.Name = "txt_table_id";
-            this.txt_table_id.Size = new System.Drawing.Size(853, 29);
-            this.txt_table_id.TabIndex = 35;
-            // 
-            // guna2HtmlLabel11
-            // 
-            this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel11.Location = new System.Drawing.Point(7, 85);
-            this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
-            this.guna2HtmlLabel11.Size = new System.Drawing.Size(105, 23);
-            this.guna2HtmlLabel11.TabIndex = 30;
-            this.guna2HtmlLabel11.Text = "TRẠNG THÁI: ";
-            // 
-            // guna2HtmlLabel12
-            // 
-            this.guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel12.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel12.Location = new System.Drawing.Point(7, 51);
-            this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
-            this.guna2HtmlLabel12.Size = new System.Drawing.Size(77, 23);
-            this.guna2HtmlLabel12.TabIndex = 29;
-            this.guna2HtmlLabel12.Text = "TÊN BÀN: ";
-            // 
-            // guna2HtmlLabel13
-            // 
-            this.guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel13.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel13.Location = new System.Drawing.Point(7, 14);
-            this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
-            this.guna2HtmlLabel13.Size = new System.Drawing.Size(24, 23);
-            this.guna2HtmlLabel13.TabIndex = 28;
-            this.guna2HtmlLabel13.Text = "ID: ";
-            // 
-            // dgvTable
-            // 
-            this.dgvTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTable.Location = new System.Drawing.Point(5, 136);
-            this.dgvTable.Name = "dgvTable";
-            this.dgvTable.Size = new System.Drawing.Size(979, 407);
-            this.dgvTable.TabIndex = 27;
-            // 
-            // btn_table_luu
-            // 
-            this.btn_table_luu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_table_luu.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.btn_table_luu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btn_table_luu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btn_table_luu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_table_luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_table_luu.ForeColor = System.Drawing.Color.Blue;
-            this.btn_table_luu.Location = new System.Drawing.Point(685, 550);
-            this.btn_table_luu.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btn_table_luu.Name = "btn_table_luu";
-            this.btn_table_luu.Size = new System.Drawing.Size(139, 46);
-            this.btn_table_luu.TabIndex = 26;
-            this.btn_table_luu.Text = "Lưu";
-            this.btn_table_luu.UseVisualStyleBackColor = true;
-            // 
-            // btn_table_sua
-            // 
-            this.btn_table_sua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_table_sua.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_table_sua.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow;
-            this.btn_table_sua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btn_table_sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_table_sua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_table_sua.ForeColor = System.Drawing.Color.Olive;
-            this.btn_table_sua.Location = new System.Drawing.Point(513, 550);
-            this.btn_table_sua.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btn_table_sua.Name = "btn_table_sua";
-            this.btn_table_sua.Size = new System.Drawing.Size(139, 46);
-            this.btn_table_sua.TabIndex = 25;
-            this.btn_table_sua.Text = "Sửa";
-            this.btn_table_sua.UseVisualStyleBackColor = true;
-            // 
-            // btn_table_xoa
-            // 
-            this.btn_table_xoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_table_xoa.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btn_table_xoa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btn_table_xoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btn_table_xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_table_xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_table_xoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btn_table_xoa.Location = new System.Drawing.Point(341, 550);
-            this.btn_table_xoa.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btn_table_xoa.Name = "btn_table_xoa";
-            this.btn_table_xoa.Size = new System.Drawing.Size(139, 46);
-            this.btn_table_xoa.TabIndex = 24;
-            this.btn_table_xoa.Text = "Xoá";
-            this.btn_table_xoa.UseVisualStyleBackColor = true;
-            // 
-            // btn_table_them
-            // 
-            this.btn_table_them.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_table_them.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_table_them.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
-            this.btn_table_them.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btn_table_them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_table_them.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_table_them.ForeColor = System.Drawing.Color.Green;
-            this.btn_table_them.Location = new System.Drawing.Point(170, 550);
-            this.btn_table_them.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btn_table_them.Name = "btn_table_them";
-            this.btn_table_them.Size = new System.Drawing.Size(139, 46);
-            this.btn_table_them.TabIndex = 23;
-            this.btn_table_them.Text = "Thêm";
-            this.btn_table_them.UseVisualStyleBackColor = true;
             // 
             // taikhoan
             // 
@@ -484,6 +333,22 @@
             this.btn_acc_them.Text = "Thêm";
             this.btn_acc_them.UseVisualStyleBackColor = true;
             // 
+            // pnBanAn
+            // 
+            this.pnBanAn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnBanAn.Location = new System.Drawing.Point(0, 0);
+            this.pnBanAn.Name = "pnBanAn";
+            this.pnBanAn.Size = new System.Drawing.Size(993, 566);
+            this.pnBanAn.TabIndex = 0;
+            // 
+            // pnDanhMuc
+            // 
+            this.pnDanhMuc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnDanhMuc.Location = new System.Drawing.Point(0, 0);
+            this.pnDanhMuc.Name = "pnDanhMuc";
+            this.pnDanhMuc.Size = new System.Drawing.Size(993, 566);
+            this.pnDanhMuc.TabIndex = 0;
+            // 
             // frmQuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -497,9 +362,8 @@
             this.doanhthu.ResumeLayout(false);
             this.doanhthu.PerformLayout();
             this.thucan.ResumeLayout(false);
+            this.danhmuc.ResumeLayout(false);
             this.banan.ResumeLayout(false);
-            this.banan.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).EndInit();
             this.taikhoan.ResumeLayout(false);
             this.taikhoan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).EndInit();
@@ -515,17 +379,6 @@
         private System.Windows.Forms.TabPage danhmuc;
         private System.Windows.Forms.TabPage banan;
         private System.Windows.Forms.TabPage taikhoan;
-        private System.Windows.Forms.TextBox txt_trangthai;
-        private System.Windows.Forms.TextBox txt_tenban;
-        private System.Windows.Forms.TextBox txt_table_id;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel13;
-        private System.Windows.Forms.DataGridView dgvTable;
-        private System.Windows.Forms.Button btn_table_luu;
-        private System.Windows.Forms.Button btn_table_sua;
-        private System.Windows.Forms.Button btn_table_xoa;
-        private System.Windows.Forms.Button btn_table_them;
         private System.Windows.Forms.TextBox txt_acc_loai;
         private System.Windows.Forms.TextBox txt_acc_ten;
         private System.Windows.Forms.TextBox txt_acc_id;
@@ -541,5 +394,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel txt_TongDoanhThu;
         private System.Windows.Forms.Panel pnDoanhThu;
         private System.Windows.Forms.Panel pnThucAn;
+        private System.Windows.Forms.Panel pnBanAn;
+        private System.Windows.Forms.Panel pnDanhMuc;
     }
 }

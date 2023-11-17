@@ -18,6 +18,7 @@ namespace QuanLyCafe.GUI.CLDUI
             InitializeComponent();
             LoadDataDon();
             btnLuu.Enabled = false;
+            btn_Exit.Visible = false;
         }
         #region Thuc An
         void LoadDataDon()
@@ -139,6 +140,7 @@ namespace QuanLyCafe.GUI.CLDUI
                 {
                     int rec = ThemDon(ta);
                     MessageBox.Show($"Đã thêm thành công {txt_tenmon.Text}", "Thông Báo");
+                    isAdd = false;
                 }
                 else
                 {
@@ -151,6 +153,7 @@ namespace QuanLyCafe.GUI.CLDUI
                 {
                     int rec = SuaDon(ta);
                     MessageBox.Show($"Đã sửa thành công {txt_tenmon.Text}", "Thông Báo");
+                    isFix = false;
                 }
                 else
                 {
@@ -168,6 +171,7 @@ namespace QuanLyCafe.GUI.CLDUI
             txt_loaimon.Enabled = false;
             cbSize.Enabled = false;
             txt_giatien.Enabled = false;
+            btn_Exit.Visible = true;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -190,7 +194,7 @@ namespace QuanLyCafe.GUI.CLDUI
             btnXoa.Enabled = false;
             btnSua.Enabled = false;
             btnLuu.Enabled = true;
-            
+            btn_Exit.Visible = true;
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -207,9 +211,26 @@ namespace QuanLyCafe.GUI.CLDUI
             txt_loaimon.Enabled = true;
             cbSize.Enabled = true;
             txt_giatien.Enabled = true;
+            btn_Exit.Visible = true;
         }
+
         #endregion
 
-
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            btn_Exit.Visible = false;
+            isFix = false;
+            isAdd = false;
+            btnThem.Enabled = true;
+            btnXoa.Enabled = true;
+            btnSua.Enabled = true;
+            btnLuu.Enabled = false;
+            dgvThucAn.Enabled = true;
+            txt_id.Enabled = false;
+            txt_tenmon.Enabled = false;
+            txt_loaimon.Enabled = false;
+            cbSize.Enabled = false;
+            txt_giatien.Enabled = false;
+        }
     }
 }
