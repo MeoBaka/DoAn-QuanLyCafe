@@ -1,11 +1,6 @@
 ﻿using QuanLyCafe.BLL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace QuanLyCafe.GUI.CLDUI
@@ -69,7 +64,7 @@ namespace QuanLyCafe.GUI.CLDUI
         }
         private int Sua(QuanLyBanAn an)
         {
-            string sql = "UPDATE M3_TABLE SET TENLOAI=@tenloai STATUS=@status WHERE SOBAN=@id";
+            string sql = "UPDATE M3_TABLE SET NAME=@tenloai, STATUS=@status WHERE SOBAN=@id";
             string[] param = { "@id", "@tenloai", "@status" };
             object[] value = { int.Parse(txt_soban.Text), txt_tenban.Text, cbStatus.Text };
             return an.QuanLyBanAnExecuteNonQuery(sql, param, value, false);
@@ -94,32 +89,37 @@ namespace QuanLyCafe.GUI.CLDUI
             txt_tenban.Text = "";
             txt_soban.Enabled = true;
             isAdd = true;
-
+            txt_tenban.Enabled = true;
             btnThem.Enabled = false;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
             btnLuu.Enabled = true;
-            btn_Exit.Visible = false;
+            btn_Exit.Visible = true;
+            dgvThucAn.Enabled = false;
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             isFix = true;
+            txt_tenban.Enabled = true;
             txt_soban.Enabled = false;
             btn_Exit.Visible = true;
             btnThem.Enabled = false;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
             btnLuu.Enabled = true;
+            dgvThucAn.Enabled = false;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
             an = new QuanLyBanAn();
+            Console.WriteLine(cbStatus.Text);
             if (isAdd)
             {
                 if (an.Connect())
                 {
+                    
                     int rec = Them(an);
                     MessageBox.Show($"Đã thêm thành công {txt_tenban.Text}", "Thông Báo");
                     isAdd = false;
@@ -143,11 +143,12 @@ namespace QuanLyCafe.GUI.CLDUI
                 }
             }
             LoadData();
-            btn_Exit.Visible = false;
+            btn_Exit.Visible = true;
             btnThem.Enabled = true;
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
             btnLuu.Enabled = false;
+            dgvThucAn.Enabled = true;
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)

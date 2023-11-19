@@ -1,14 +1,8 @@
 ﻿using QuanLyCafe.BLL;
-using QuanLyCafe.DAL;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
