@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyCafe.BLL;
+using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.InteropServices;
@@ -27,14 +28,32 @@ namespace QuanLyCafe.GUI
         [DllImport("user32.dll")]
         public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int x, int y, int cx, int cy, uint uFlags);
 
-
-        public frmMain()
+        Role rl = new Role();
+        TaiKhoan tk = new TaiKhoan();
+        private string GetUser;
+        public frmMain(string GetData)
         {
             InitializeComponent();
             OpenFromPage(new CLDUI.frmPageMain());
             this.ControlBox = false;
             this.Text = $"Hệ Thống Quản Lý";
+            GetUser = GetData;
+            if (tk.Connect())
+            {
+                int rec = rl.CheckRole(tk, GetUser, "staff");
+                Console.WriteLine(GetUser + " Check " + rec);
+                if(rec > 0)
+                {
+                    btnAdmin.Enabled = true;
+                }
+                else
+                {
+                    btnAdmin.Enabled = false;
+                }
+            }
         }
+
+        
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
@@ -119,6 +138,13 @@ namespace QuanLyCafe.GUI
             BtnStatus = btnTable.Text;
             btn_CloseButton.Visible = true;
             OpenFromPage(new CLDUI.frmQuanLy());
+        }
+
+        private void btnThongTin_Click(object sender, EventArgs e)
+        {
+            BtnStatus = btnTable.Text;
+            btn_CloseButton.Visible = true;
+            OpenFromPage(new CLDUI.frmAccount(GetUser));
         }
     }
 }

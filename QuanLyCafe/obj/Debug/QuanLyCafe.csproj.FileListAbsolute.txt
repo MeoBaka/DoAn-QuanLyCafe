@@ -26,3 +26,5 @@ D:\DoAn\Winform\DoAn-QuanLyCafe\QuanLyCafe\obj\Debug\QuanLyCafe.GUI.CLDUI.frmDoa
 D:\DoAn\Winform\DoAn-QuanLyCafe\QuanLyCafe\obj\Debug\QuanLyCafe.GUI.CLDUI.frmDanhMuc.resources
 D:\DoAn\Winform\DoAn-QuanLyCafe\QuanLyCafe\obj\Debug\QuanLyCafe.GUI.CLDUI.frmQLBanAn.resources
 D:\DoAn\Winform\DoAn-QuanLyCafe\QuanLyCafe\obj\Debug\QuanLyCafe.GUI.CLDUI.frmTaiKhoan.resources
+D:\DoAn\Winform\DoAn-QuanLyCafe\QuanLyCafe\obj\Debug\QuanLyCafe.GUI.CLDUI.frmOnlyAdmin.resources
+D:\DoAn\Winform\DoAn-QuanLyCafe\QuanLyCafe\obj\Debug\QuanLyCafe.GUI.CLDUI.frmAccount.resources

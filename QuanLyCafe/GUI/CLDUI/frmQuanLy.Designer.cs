@@ -39,11 +39,13 @@
             this.banan = new System.Windows.Forms.TabPage();
             this.pnBanAn = new System.Windows.Forms.Panel();
             this.taikhoan = new System.Windows.Forms.TabPage();
+            this.pnTaiKhoan = new System.Windows.Forms.Panel();
             this.tcQuanLy.SuspendLayout();
             this.doanhthu.SuspendLayout();
             this.thucan.SuspendLayout();
             this.danhmuc.SuspendLayout();
             this.banan.SuspendLayout();
+            this.taikhoan.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcQuanLy
@@ -166,12 +168,21 @@
             // 
             // taikhoan
             // 
+            this.taikhoan.Controls.Add(this.pnTaiKhoan);
             this.taikhoan.Location = new System.Drawing.Point(184, 4);
             this.taikhoan.Name = "taikhoan";
             this.taikhoan.Size = new System.Drawing.Size(993, 566);
             this.taikhoan.TabIndex = 4;
             this.taikhoan.Text = "Tài khoản";
             this.taikhoan.UseVisualStyleBackColor = true;
+            // 
+            // pnTaiKhoan
+            // 
+            this.pnTaiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnTaiKhoan.Location = new System.Drawing.Point(0, 0);
+            this.pnTaiKhoan.Name = "pnTaiKhoan";
+            this.pnTaiKhoan.Size = new System.Drawing.Size(993, 566);
+            this.pnTaiKhoan.TabIndex = 0;
             // 
             // frmQuanLy
             // 
@@ -188,6 +199,7 @@
             this.thucan.ResumeLayout(false);
             this.danhmuc.ResumeLayout(false);
             this.banan.ResumeLayout(false);
+            this.taikhoan.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -205,5 +217,6 @@
         private System.Windows.Forms.Panel pnThucAn;
         private System.Windows.Forms.Panel pnBanAn;
         private System.Windows.Forms.Panel pnDanhMuc;
+        private System.Windows.Forms.Panel pnTaiKhoan;
     }
 }

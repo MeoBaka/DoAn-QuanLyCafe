@@ -8,7 +8,6 @@ namespace QuanLyCafe.GUI
 {
     public partial class frmLogin : Form
     {
-
         User user;
         public frmLogin()
         {
@@ -17,6 +16,7 @@ namespace QuanLyCafe.GUI
             this.Text = $"Đăng Nhập Hệ Thống";
             lbl_thongbao.AutoSize = false;
             lbl_thongbao.Height = 180;
+            
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace QuanLyCafe.GUI
                 Console.WriteLine(dnstatus.ToString());
                 if (dnstatus > 0)
                 {
-                    frmMain frmMain = new frmMain();
+                    frmMain frmMain = new frmMain(txt_User.Texts);
                     this.Hide();
                     frmMain.Show();
                 }

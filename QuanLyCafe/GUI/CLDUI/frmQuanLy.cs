@@ -45,6 +45,10 @@ namespace QuanLyCafe.GUI.CLDUI
             {
                 OpenFromPage(new frmQLBanAn(), pnBanAn);
             }
+            if (tcQuanLy.SelectedTab.Text.ToLower() == "tài khoản")
+            {
+                OpenFromPage(new frmTaiKhoan(), pnTaiKhoan);
+            }
 
         }
 

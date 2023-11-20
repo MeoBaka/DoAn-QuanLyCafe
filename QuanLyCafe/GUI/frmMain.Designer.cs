@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Bunifu.UI.WinForms.BunifuFormCaptionButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuFormCaptionButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuFormCaptionButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuFormCaptionButton.BorderEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnTop = new System.Windows.Forms.Panel();
             this.btn_CloseButton = new Bunifu.UI.WinForms.BunifuFormCaptionButton();
@@ -90,11 +90,11 @@
             this.btn_CloseButton.ColorContrastOnClick = 30;
             this.btn_CloseButton.ColorContrastOnHover = 30;
             this.btn_CloseButton.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges6.BottomLeft = true;
-            borderEdges6.BottomRight = true;
-            borderEdges6.TopLeft = true;
-            borderEdges6.TopRight = true;
-            this.btn_CloseButton.CustomizableEdges = borderEdges6;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btn_CloseButton.CustomizableEdges = borderEdges3;
             this.btn_CloseButton.DefaultBorderColor = System.Drawing.Color.Empty;
             this.btn_CloseButton.DefaultColor = System.Drawing.Color.RoyalBlue;
             this.btn_CloseButton.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -211,6 +211,7 @@
             this.btnThongTin.TabIndex = 0;
             this.btnThongTin.Text = "Thông Tin TK";
             this.btnThongTin.UseVisualStyleBackColor = true;
+            this.btnThongTin.Click += new System.EventHandler(this.btnThongTin_Click);
             // 
             // btnAdmin
             // 

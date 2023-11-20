@@ -94,7 +94,9 @@
     <Compile Include="BLL\DoanhThu.cs" />
     <Compile Include="BLL\LoaiDon.cs" />
     <Compile Include="BLL\QuanLyBanAn.cs" />
+    <Compile Include="BLL\Role.cs" />
     <Compile Include="BLL\Table.cs" />
+    <Compile Include="BLL\TaiKhoan.cs" />
     <Compile Include="BLL\ThucAn.cs" />
     <Compile Include="BLL\User.cs" />
     <Compile Include="Controls\FormChild.cs" />
@@ -105,11 +107,23 @@
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\Provider.cs" />
+    <Compile Include="GUI\CLDUI\frmAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CLDUI\frmAccount.Designer.cs">
+      <DependentUpon>frmAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\CLDUI\frmDoanhThu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\CLDUI\frmDoanhThu.Designer.cs">
       <DependentUpon>frmDoanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CLDUI\frmOnlyAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CLDUI\frmOnlyAdmin.Designer.cs">
+      <DependentUpon>frmOnlyAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\CLDUI\frmPageMain.cs">
       <SubType>Form</SubType>
@@ -170,8 +184,14 @@
     <EmbeddedResource Include="Controls\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CLDUI\frmAccount.resx">
+      <DependentUpon>frmAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\CLDUI\frmDoanhThu.resx">
       <DependentUpon>frmDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CLDUI\frmOnlyAdmin.resx">
+      <DependentUpon>frmOnlyAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\CLDUI\frmPageMain.resx">
       <DependentUpon>frmPageMain.cs</DependentUpon>
