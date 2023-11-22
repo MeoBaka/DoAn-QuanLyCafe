@@ -113,7 +113,10 @@ namespace QuanLyCafe.GUI.CLDUI
             // Lấy thông tin từ ListView và tổng tiền
             StringBuilder sb = new StringBuilder();
             decimal tongTien = 0;
-
+            string tenBan = selectedButton.Text;
+            int index = tenBan.IndexOf("\n");
+            tenBan = tenBan.Substring(0, index);
+            BILL bILL = new BILL();
             foreach (ListViewItem item in lsvBill2.Items)
             {
                 string tenMon = item.SubItems[0].Text;
@@ -124,6 +127,10 @@ namespace QuanLyCafe.GUI.CLDUI
                 sb.AppendLine($"Tên món: {tenMon}, Số lượng: {soLuong}, Đơn giá: {donGia:#,##0} vnđ, Thành tiền: {thanhTien:#,##0} vnđ");
 
                 tongTien += thanhTien;
+                if (bILL.Connect())
+                {
+                    int rec = UpdateDoanhThu(bILL, tenBan, tenMon, soLuong, thanhTien, donGia.ToString());
+                }
             }
 
             // Hiển thị MessageBox
@@ -133,10 +140,9 @@ namespace QuanLyCafe.GUI.CLDUI
 
             // Xoá toàn bộ dữ liệu trong ListView và cập nhật txt_ThanhToan
             lsvBill2.Items.Clear();
-            BILL bILL = new BILL();
-            string tenBan = selectedButton.Text;
-            int index = tenBan.IndexOf("\n");
-            tenBan = tenBan.Substring(0, index);
+            
+            
+            
             if (bILL.Connect())
             {
                 int rec = UpdateBill(bILL, tenBan);
@@ -146,6 +152,7 @@ namespace QuanLyCafe.GUI.CLDUI
             {
                 int rec = UpdateTable(table, "Trống", tenBan);
             }
+            
             txt_ThanhToan.Text = "0"; // Đặt lại giá trị tổng tiền thành 0
 
             ReloadFlpTable();
@@ -276,10 +283,7 @@ namespace QuanLyCafe.GUI.CLDUI
                 {
                     int rec = UpdateBill(bILL, tenBan, ten, soLuong, thanhTien, giatri);
                 }
-                if (bILL.Connect())
-                {
-                    int rec = UpdateDoanhThu(bILL, tenBan, ten, soLuong, thanhTien, giatri);
-                }
+                
                 Table table = new Table(); ;
                 if (table.Connect())
                 {
