@@ -34,22 +34,6 @@ namespace QuanLyCafe.GUI.CLDUI
             table.DisConnect(); // Đảm bảo đóng kết nối sau khi hoàn thành công việc
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         public void ReloadFlpTable()
         {
             Table table = new Table();

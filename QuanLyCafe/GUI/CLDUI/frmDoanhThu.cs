@@ -13,6 +13,8 @@ namespace QuanLyCafe.GUI.CLDUI
             InitializeComponent();
             LoadDataDoanhThu();
             LoadLoaiIDon();
+            TuNgay.Text = DateTime.Now.ToString();
+            DenNgay.Text = DateTime.Now.ToString();
         }
         #region DoanhThu
         BLL.DoanhThu mh;
@@ -177,6 +179,7 @@ namespace QuanLyCafe.GUI.CLDUI
         private void btn_ThongTin_Click(object sender, EventArgs e)
         {
             btn_ThongKe_Click(sender,e);
+            MessageBox.Show($"TuNgay: {TuNgay.Text}\nDenNgay: {DenNgay.Text}","Date Time Picker");
         }
 
         private void frmDoanhThu_Load(object sender, EventArgs e)

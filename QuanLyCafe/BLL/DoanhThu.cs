@@ -43,12 +43,12 @@ namespace QuanLyCafe.BLL
             string sql = "SELECT * FROM M3_DOANHTHU WHERE TIME BETWEEN @NgayBatDau AND @NgayKetThuc AND NAME = @TenBan";
 
             // Trừ đi 1 ngày từ ngày bắt đầu và ngày kết thúc
-            DateTime ngayBatDau = data1.AddDays(1);
+            DateTime ngayBatDau = data1.AddDays(0);
             DateTime ngayKetThuc = data2.AddDays(1);
 
             // Chuyển đổi thành chuỗi ngày tháng đúng định dạng
-            string ngayBatDauStr = ngayBatDau.ToString("yyyy-MM-dd HH:mm:ss");
-            string ngayKetThucStr = ngayKetThuc.ToString("yyyy-MM-dd HH:mm:ss");
+            string ngayBatDauStr = ngayBatDau.ToString("yyyy-MM-dd");
+            string ngayKetThucStr = ngayKetThuc.ToString("yyyy-MM-dd");
 
             // Sử dụng chuỗi cho các tham số
             string[] parameters = { "@NgayBatDau", "@NgayKetThuc", "@TenBan" };
