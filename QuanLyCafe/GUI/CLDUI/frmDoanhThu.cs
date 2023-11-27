@@ -173,5 +173,15 @@ namespace QuanLyCafe.GUI.CLDUI
         }
 
         #endregion
+
+        private void btn_ThongTin_Click(object sender, EventArgs e)
+        {
+            btn_ThongKe_Click(sender,e);
+        }
+
+        private void frmDoanhThu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

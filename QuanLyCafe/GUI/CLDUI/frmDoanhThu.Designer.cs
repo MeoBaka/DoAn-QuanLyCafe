@@ -106,6 +106,7 @@
             this.btn_ThongTin.TabIndex = 15;
             this.btn_ThongTin.Text = "XEM THÔNG TIN";
             this.btn_ThongTin.UseVisualStyleBackColor = true;
+            this.btn_ThongTin.Click += new System.EventHandler(this.btn_ThongTin_Click);
             // 
             // cbTable
             // 
@@ -182,7 +183,7 @@
             this.TuNgay.TabIndex = 8;
             this.TuNgay.Value = new System.DateTime(2023, 11, 13, 12, 58, 47, 231);
             // 
-            // frmDanhThu
+            // frmDoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -198,8 +199,9 @@
             this.Controls.Add(this.DenNgay);
             this.Controls.Add(this.TuNgay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmDanhThu";
+            this.Name = "frmDoanhThu";
             this.Text = "frmDanhThu";
+            this.Load += new System.EventHandler(this.frmDoanhThu_Load);
             this.Click += new System.EventHandler(this.btn_ThongKe_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoanhThu)).EndInit();
             this.ResumeLayout(false);
