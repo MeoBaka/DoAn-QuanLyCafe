@@ -66,7 +66,7 @@
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(12, 273);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(12, 164);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(110, 23);
             this.guna2HtmlLabel2.TabIndex = 49;
@@ -75,7 +75,7 @@
             // txt_old_pass
             // 
             this.txt_old_pass.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
-            this.txt_old_pass.Location = new System.Drawing.Point(158, 296);
+            this.txt_old_pass.Location = new System.Drawing.Point(158, 187);
             this.txt_old_pass.Name = "txt_old_pass";
             this.txt_old_pass.Size = new System.Drawing.Size(349, 29);
             this.txt_old_pass.TabIndex = 1;
@@ -84,7 +84,7 @@
             // txt_new_pass
             // 
             this.txt_new_pass.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
-            this.txt_new_pass.Location = new System.Drawing.Point(158, 331);
+            this.txt_new_pass.Location = new System.Drawing.Point(158, 222);
             this.txt_new_pass.Name = "txt_new_pass";
             this.txt_new_pass.Size = new System.Drawing.Size(349, 29);
             this.txt_new_pass.TabIndex = 2;
@@ -93,7 +93,7 @@
             // txt_new_pass_repeat
             // 
             this.txt_new_pass_repeat.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
-            this.txt_new_pass_repeat.Location = new System.Drawing.Point(158, 366);
+            this.txt_new_pass_repeat.Location = new System.Drawing.Point(158, 257);
             this.txt_new_pass_repeat.Name = "txt_new_pass_repeat";
             this.txt_new_pass_repeat.Size = new System.Drawing.Size(349, 29);
             this.txt_new_pass_repeat.TabIndex = 3;
@@ -103,7 +103,7 @@
             // 
             this.CB.BackColor = System.Drawing.Color.Transparent;
             this.CB.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CB.Location = new System.Drawing.Point(513, 302);
+            this.CB.Location = new System.Drawing.Point(513, 193);
             this.CB.Name = "CB";
             this.CB.Size = new System.Drawing.Size(3, 2);
             this.CB.TabIndex = 49;
@@ -113,7 +113,7 @@
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(12, 302);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(12, 193);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(104, 23);
             this.guna2HtmlLabel5.TabIndex = 49;
@@ -123,7 +123,7 @@
             // 
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(12, 372);
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(12, 263);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             this.guna2HtmlLabel6.Size = new System.Drawing.Size(137, 23);
             this.guna2HtmlLabel6.TabIndex = 49;
@@ -133,7 +133,7 @@
             // 
             this.Showpass.AutoSize = true;
             this.Showpass.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
-            this.Showpass.Location = new System.Drawing.Point(158, 401);
+            this.Showpass.Location = new System.Drawing.Point(158, 292);
             this.Showpass.Name = "Showpass";
             this.Showpass.Size = new System.Drawing.Size(171, 25);
             this.Showpass.TabIndex = 51;
@@ -150,7 +150,7 @@
             this.btnDoiPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDoiPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDoiPass.ForeColor = System.Drawing.Color.Green;
-            this.btnDoiPass.Location = new System.Drawing.Point(158, 447);
+            this.btnDoiPass.Location = new System.Drawing.Point(158, 338);
             this.btnDoiPass.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnDoiPass.Name = "btnDoiPass";
             this.btnDoiPass.Size = new System.Drawing.Size(349, 46);
@@ -163,7 +163,7 @@
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(12, 337);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(12, 228);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(114, 23);
             this.guna2HtmlLabel1.TabIndex = 49;

@@ -16,11 +16,6 @@ namespace QuanLyCafe.GUI
 
         private const int SWP_SHOWWINDOW = 0x0040;
         private const int SWP_FRAMECHANGED = 0x0020;
-        private const int SWP_NOZORDER = 0x0004;
-        private const int SWP_NOSIZE = 0x0001;
-        private const int SWP_NOMOVE = 0x0002;
-        private const int SWP_DRAWFRAME = 0x0020;
-        private const int SWP_DEFERERASE = 0x2000;
         private const int HWND_TOPMOST = -2;
 
         [DllImport("user32.dll")]

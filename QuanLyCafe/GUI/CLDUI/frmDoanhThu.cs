@@ -54,12 +54,12 @@ namespace QuanLyCafe.GUI.CLDUI
                 // Gán dữ liệu từ DataTable vào ComboBox
                 cmb = new ComboBox();
                 cmb.DataSource = data;
-                cmb.DisplayMember = "NAME"; // Thay "TENLOAI" bằng tên cột bạn muốn hiển thị trong ComboBox
-                cmb.ValueMember = "NAME"; // Thay "TENLOAI" bằng tên cột bạn muốn sử dụng làm giá trị.
+                cmb.DisplayMember = "NAME"; 
+                cmb.ValueMember = "NAME"; 
 
-                cbTable.DisplayMember = cmb.DisplayMember; // Gán tên cột hiển thị
-                cbTable.ValueMember = cmb.ValueMember;     // Gán tên cột làm giá trị
-                cbTable.DataSource = cmb.DataSource;        // Gán dữ liệu từ ComboBox gốc
+                cbTable.DisplayMember = cmb.DisplayMember;
+                cbTable.ValueMember = cmb.ValueMember;    
+                cbTable.DataSource = cmb.DataSource;        
 
                 mh.DisConnect();
             }
