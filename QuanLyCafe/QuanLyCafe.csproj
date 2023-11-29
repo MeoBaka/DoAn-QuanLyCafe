@@ -107,6 +107,7 @@
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\Provider.cs" />
+    <Compile Include="DAL\SQL.cs" />
     <Compile Include="GUI\CLDUI\frmAccount.cs">
       <SubType>Form</SubType>
     </Compile>
