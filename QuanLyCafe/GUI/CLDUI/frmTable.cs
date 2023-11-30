@@ -290,6 +290,31 @@ namespace QuanLyCafe.GUI.CLDUI
                 {
                     int rec = UpdateTable(table, "Đang Dùng", tenBan);
                 }
+
+                ListViewItem existingItem = null;
+                foreach (ListViewItem item in lsvBill2.Items)
+                {
+                    if (item.SubItems[0].Text == ten && item.SubItems[1].Text == giatri)
+                    {
+                        existingItem = item;
+                        break;
+                    }
+                }
+                if (existingItem != null)
+                {
+                    // Nếu món đã tồn tại, cộng dồn số lượng và tính lại thành tiền
+                    int existingQuantity = int.Parse(existingItem.SubItems[2].Text);
+                    existingItem.SubItems[2].Text = (existingQuantity + soLuong).ToString();
+                    decimal existingTotal = decimal.Parse(existingItem.SubItems[3].Text);
+                    existingItem.SubItems[3].Text = (existingTotal + thanhTien).ToString("N2");
+                }
+                else
+                {
+                    // Nếu món chưa tồn tại, thêm mới vào ListView
+                    ListViewItem newItem = new ListViewItem(new string[] { ten, giatri, soLuong.ToString(), thanhTien.ToString("N2") });
+                    lsvBill2.Items.Add(newItem);
+                }
+
                 // Cập nhật ListView và TextBox
                 UpdateListView();
                 CalculateTotalBill();
@@ -414,6 +439,9 @@ namespace QuanLyCafe.GUI.CLDUI
             string tenBan = selectedButton.Text;
             int index = tenBan.IndexOf("\n");
             tenBan = tenBan.Substring(0, index);
+
+            
+
             if (lsvBill2.SelectedItems.Count > 0)
             {
                 // Lấy ListViewItem đang được chọn
@@ -444,6 +472,20 @@ namespace QuanLyCafe.GUI.CLDUI
                         MessageBox.Show("Đã Xoá Thành Công", "Thông Báo");
                         UpdateListView();
                         CalculateTotalBill();
+                    }
+                }
+            }
+
+            Console.WriteLine(lsvBill2.Items.Count);
+            if (lsvBill2.Items.Count == 0)
+            {
+                // If lsvBill2 is empty, update the table status to "Trống"
+                if (table.Connect())
+                {
+                    int rec = UpdateTable(table, "Trống", tenBan);
+                    if (rec > 0)
+                    {
+                        ReloadFlpTable();
                     }
                 }
             }

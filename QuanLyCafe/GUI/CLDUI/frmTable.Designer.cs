@@ -49,7 +49,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_Select = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -167,12 +166,11 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
+            this.columnHeader4});
             this.lsvBill2.FullRowSelect = true;
             this.lsvBill2.GridLines = true;
             this.lsvBill2.HideSelection = false;
-            this.lsvBill2.Location = new System.Drawing.Point(3, 210);
+            this.lsvBill2.Location = new System.Drawing.Point(4, 210);
             this.lsvBill2.Name = "lsvBill2";
             this.lsvBill2.Size = new System.Drawing.Size(404, 248);
             this.lsvBill2.TabIndex = 5;
@@ -191,12 +189,12 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Đơn giá";
-            this.columnHeader3.Width = 54;
+            this.columnHeader3.Width = 100;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Thành tiền";
-            this.columnHeader4.Width = 81;
+            this.columnHeader4.Width = 107;
             // 
             // txt_ThanhToan
             // 
@@ -272,10 +270,6 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Tổng Tiền: ";
             // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "ID";
-            // 
             // frmTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,6 +325,5 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbl_Select;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }
