@@ -184,7 +184,7 @@ namespace QuanLyCafe.GUI.CLDUI
                 cmb.DisplayMember = "TENLOAI"; // Thay "TENLOAI" bằng tên cột bạn muốn hiển thị trong ComboBox
                 cmb.ValueMember = "TENLOAI"; // Thay "TENLOAI" bằng tên cột bạn muốn sử dụng làm giá trị.
 
-                cbLoai.DisplayMember = cmb.DisplayMember; // Gán tên cột hiển thị
+                cbLoai.DisplayMember = cmb.DisplayMember; // Gán tên cột hiển thị 
                 cbLoai.ValueMember = cmb.ValueMember;     // Gán tên cột làm giá trị
                 cbLoai.DataSource = cmb.DataSource;        // Gán dữ liệu từ ComboBox gốc
 
