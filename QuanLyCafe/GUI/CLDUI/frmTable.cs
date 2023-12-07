@@ -102,7 +102,7 @@ namespace QuanLyCafe.GUI.CLDUI
                 int index = tenBan.IndexOf("\n");
                 tenBan = tenBan.Substring(0, index);
                 lbl_Select.Text = "Đang Chọn: " + tenBan;
-                UpdateListView();
+                UpdateListView(); 
                 CalculateTotalBill();
             };
 
@@ -111,6 +111,25 @@ namespace QuanLyCafe.GUI.CLDUI
         }
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
+            if (selectedButton == null)
+            {
+                MessageBox.Show("Vui lòng chọn một bàn trước.", "Thông báo");
+                return;
+            }
+
+            ListViewItem existingItem = null;
+            foreach (ListViewItem item in lsvBill2.Items)
+            {
+                existingItem = item;
+                break;
+            }
+            if (existingItem == null)
+            {
+                MessageBox.Show("Bàn Này đang trống", "Thông Báo");
+                return;
+            }
+
+
             // Lấy thông tin từ ListView và tổng tiền
             StringBuilder sb = new StringBuilder();
             decimal tongTien = 0;
@@ -158,6 +177,7 @@ namespace QuanLyCafe.GUI.CLDUI
 
             ReloadFlpTable();
             lbl_Select.Text = "Vừa Chọn: "+tenBan;
+            selectedButton = null;
         }
         private int UpdateBill(BILL bll,string tenban)
         {
