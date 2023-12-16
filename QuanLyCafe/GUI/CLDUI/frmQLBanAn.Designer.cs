@@ -120,6 +120,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvThucAn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvThucAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvThucAn.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvThucAn.Location = new System.Drawing.Point(10, 124);
             this.dgvThucAn.MultiSelect = false;
             this.dgvThucAn.Name = "dgvThucAn";

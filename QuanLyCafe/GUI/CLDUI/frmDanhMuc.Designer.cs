@@ -66,6 +66,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTable.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvTable.Location = new System.Drawing.Point(12, 76);
             this.dgvTable.MultiSelect = false;
             this.dgvTable.Name = "dgvTable";

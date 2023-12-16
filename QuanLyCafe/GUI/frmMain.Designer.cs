@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Bunifu.UI.WinForms.BunifuFormCaptionButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuFormCaptionButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuFormCaptionButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuFormCaptionButton.BorderEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnTop = new System.Windows.Forms.Panel();
             this.btn_CloseButton = new Bunifu.UI.WinForms.BunifuFormCaptionButton();
@@ -90,11 +90,11 @@
             this.btn_CloseButton.ColorContrastOnClick = 30;
             this.btn_CloseButton.ColorContrastOnHover = 30;
             this.btn_CloseButton.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btn_CloseButton.CustomizableEdges = borderEdges3;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btn_CloseButton.CustomizableEdges = borderEdges1;
             this.btn_CloseButton.DefaultBorderColor = System.Drawing.Color.Empty;
             this.btn_CloseButton.DefaultColor = System.Drawing.Color.RoyalBlue;
             this.btn_CloseButton.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -167,9 +167,9 @@
             this.lbl_Title.ForeColor = System.Drawing.Color.White;
             this.lbl_Title.Location = new System.Drawing.Point(19, 8);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(111, 22);
+            this.lbl_Title.Size = new System.Drawing.Size(91, 22);
             this.lbl_Title.TabIndex = 3;
-            this.lbl_Title.Text = "Quản Lý Bàn";
+            this.lbl_Title.Text = "Danh Mục";
             // 
             // pnLeft
             // 
@@ -237,7 +237,7 @@
             this.btnTable.Name = "btnTable";
             this.btnTable.Size = new System.Drawing.Size(151, 39);
             this.btnTable.TabIndex = 0;
-            this.btnTable.Text = "Bàn";
+            this.btnTable.Text = "Tạo Hoá Đơn";
             this.btnTable.UseVisualStyleBackColor = true;
             this.btnTable.Click += new System.EventHandler(this.btnTable_Click);
             // 
