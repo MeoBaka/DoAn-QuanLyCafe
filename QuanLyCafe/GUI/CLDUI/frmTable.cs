@@ -1,4 +1,5 @@
-﻿using QuanLyCafe.BLL;
+﻿using DGVPrinterHelper;
+using QuanLyCafe.BLL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -137,6 +138,7 @@ namespace QuanLyCafe.GUI.CLDUI
             int index = tenBan.IndexOf("\n");
             tenBan = tenBan.Substring(0, index);
             BILL bILL = new BILL();
+            string getthanhTien = "";
             foreach (ListViewItem item in lsvBill2.Items)
             {
                 string tenMon = item.SubItems[0].Text;
@@ -145,6 +147,7 @@ namespace QuanLyCafe.GUI.CLDUI
                 decimal thanhTien = decimal.Parse(item.SubItems[3].Text.Replace(",", "").Replace("vnđ", "")); // Loại bỏ dấu phẩy và "vnđ"
 
                 sb.AppendLine($"Tên món: {tenMon}, Số lượng: {soLuong}, Đơn giá: {donGia:#,##0} vnđ, Thành tiền: {thanhTien:#,##0} vnđ");
+                getthanhTien = $"{thanhTien:#,##0}";
 
                 tongTien += thanhTien;
                 if (bILL.Connect())
@@ -159,10 +162,39 @@ namespace QuanLyCafe.GUI.CLDUI
             MessageBox.Show(thongBao, "Hóa đơn thanh toán");
 
             // Xoá toàn bộ dữ liệu trong ListView và cập nhật txt_ThanhToan
-            lsvBill2.Items.Clear();
             
-            
-            
+
+            DGVPrinter printer = new DGVPrinter();
+
+            printer.Title = "HOÁ ĐƠN THANH TOÁN";
+            printer.SubTitle = $"Vị Trí: {tenBan} | \tThời Gian: {DateTime.Now}";
+            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PorportionalColumns = true;
+            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.Footer = $"Thành Tiền: {getthanhTien:#,##0}\r\n Cảm Ơn Đã Sử Dụng Dịch Vụ";
+            DataTable dt = new DataTable();
+            foreach (ColumnHeader column in lsvBill2.Columns)
+            {
+                dt.Columns.Add(column.Text);
+            }
+            foreach (ListViewItem item in lsvBill2.Items)
+            {
+                DataRow row = dt.NewRow();
+                for (int i = 0; i < item.SubItems.Count; i++)
+                {
+                    if (!string.IsNullOrEmpty(item.SubItems[i].Text) && i < dt.Columns.Count)
+                    {
+                        row[i] = item.SubItems[i].Text;
+                    }
+                }
+                dt.Rows.Add(row);
+            }
+            printbill.DataSource = dt;
+            printer.PrintDataGridView(printbill);
+
+
             if (bILL.Connect())
             {
                 int rec = UpdateBill(bILL, tenBan);
@@ -174,6 +206,7 @@ namespace QuanLyCafe.GUI.CLDUI
             }
             
             txt_ThanhToan.Text = "0"; // Đặt lại giá trị tổng tiền thành 0
+            lsvBill2.Items.Clear();
 
             ReloadFlpTable();
             lbl_Select.Text = "Vừa Chọn: "+tenBan;

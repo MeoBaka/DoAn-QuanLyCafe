@@ -99,6 +99,7 @@
     <Compile Include="BLL\TaiKhoan.cs" />
     <Compile Include="BLL\ThucAn.cs" />
     <Compile Include="BLL\User.cs" />
+    <Compile Include="Controls\DGVPrinter.cs" />
     <Compile Include="Controls\FormChild.cs" />
     <Compile Include="Controls\RJTextBox.cs">
       <SubType>UserControl</SubType>

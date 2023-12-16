@@ -49,7 +49,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_Select = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.printbill = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printbill)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -270,11 +272,21 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Tổng Tiền: ";
             // 
+            // printbill
+            // 
+            this.printbill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.printbill.Location = new System.Drawing.Point(12, 258);
+            this.printbill.Name = "printbill";
+            this.printbill.Size = new System.Drawing.Size(240, 150);
+            this.printbill.TabIndex = 7;
+            this.printbill.Visible = false;
+            // 
             // frmTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1315, 600);
+            this.Controls.Add(this.printbill);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txt_ThanhToan);
             this.Controls.Add(this.lsvBill2);
@@ -297,6 +309,7 @@
             this.Text = "frmTable";
             this.Load += new System.EventHandler(this.frmTable_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printbill)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -325,5 +338,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbl_Select;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView printbill;
     }
 }
