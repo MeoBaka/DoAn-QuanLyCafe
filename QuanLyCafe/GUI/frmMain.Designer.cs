@@ -209,7 +209,7 @@
             this.btnThongTin.Name = "btnThongTin";
             this.btnThongTin.Size = new System.Drawing.Size(151, 39);
             this.btnThongTin.TabIndex = 0;
-            this.btnThongTin.Text = "Thông Tin TK";
+            this.btnThongTin.Text = "Tài Khoản";
             this.btnThongTin.UseVisualStyleBackColor = true;
             this.btnThongTin.Click += new System.EventHandler(this.btnThongTin_Click);
             // 

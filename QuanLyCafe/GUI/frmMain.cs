@@ -52,9 +52,13 @@ namespace QuanLyCafe.GUI
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            frmLogin frmLogin = new frmLogin();
-            this.Close();
-            frmLogin.Show();
+            DialogResult kq = MessageBox.Show($"Bạn có muốn Đăng Xuất?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (kq == DialogResult.Yes)
+            {
+                frmLogin frmLogin = new frmLogin();
+                this.Close();
+                frmLogin.Show();
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)

@@ -514,17 +514,20 @@ namespace QuanLyCafe.GUI.CLDUI
                 // Định dạng lại giá trị thành chuỗi với số lẻ là hai chữ số
                 Console.WriteLine(tenBan + col1 + col2 + col3Value + col4Value);
                 // formattedCol2 sẽ chứa giá trị "29000.00"
-
-                // Hiển thị thông tin cột được chọn trong MessageBox
-                if (table.Connect())
+                DialogResult kq = MessageBox.Show($"Bạn có muốn huỷ đơn {col1} từ {tenBan} không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (kq == DialogResult.Yes)
                 {
-                    int rec = XoaDonHang(table, int.Parse(col5));
-                    Console.WriteLine(rec);
-                    if (rec > 0)
+                    // Hiển thị thông tin cột được chọn trong MessageBox
+                    if (table.Connect())
                     {
-                        MessageBox.Show("Đã Xoá Thành Công", "Thông Báo");
-                        UpdateListView();
-                        CalculateTotalBill();
+                        int rec = XoaDonHang(table, int.Parse(col5));
+                        Console.WriteLine(rec);
+                        if (rec > 0)
+                        {
+                            MessageBox.Show("Đã Xoá Thành Công", "Thông Báo");
+                            UpdateListView();
+                            CalculateTotalBill();
+                        }
                     }
                 }
             }
