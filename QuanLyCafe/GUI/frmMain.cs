@@ -124,8 +124,12 @@ namespace QuanLyCafe.GUI
 
         private void btn_CloseButton_Click(object sender, EventArgs e)
         {
-            OpenFromPage(new CLDUI.frmPageMain());
-            btn_CloseButton.Visible = false;
+            DialogResult kq = MessageBox.Show("Bạn có chắc chắn muốn đóng Form không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (kq == DialogResult.Yes)
+            {
+                OpenFromPage(new CLDUI.frmPageMain());
+                btn_CloseButton.Visible = false;
+            }
         }
 
         private void btnAdmin_Click(object sender, EventArgs e)
